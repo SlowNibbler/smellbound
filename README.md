@@ -1,2 +1,0 @@
-# smellbound
-personal site
