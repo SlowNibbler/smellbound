@@ -1,0 +1,9 @@
+div.Sidebar {
+    background-color: beige;
+    padding: 20px;
+    display: inline-block;
+}
+
+div.Sidebar li {
+    list-style: none;
+}
