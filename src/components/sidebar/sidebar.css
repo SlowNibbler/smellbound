@@ -1,0 +1,14 @@
+div.sidebar {
+    background-color: beige;
+    padding: 20px;
+    display: inline-block;
+}
+
+div.sidebar li {
+    list-style: none;
+}
+
+div.sidebar li img {
+    width: 50px;
+    margin: -20px;;
+}
