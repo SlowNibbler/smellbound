@@ -3,9 +3,11 @@ import './App.css';
 import Sidebar from './components/sidebar/sidebar'
 import Content from './components/content/content'
 
+// the root of the world
+// >imagine app
 function App() {
   return (
-    <div className="App">
+    <div className="App"> 
       <Sidebar/>
       <Content/>
     </div>

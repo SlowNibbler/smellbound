@@ -1,9 +1,14 @@
-div.Sidebar {
+div.sidebar {
     background-color: beige;
     padding: 20px;
     display: inline-block;
 }
 
-div.Sidebar li {
+div.sidebar li {
     list-style: none;
+}
+
+div.sidebar li img {
+    width: 50px;
+    margin: -20px;;
 }

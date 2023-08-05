@@ -1,20 +1,18 @@
 import { Component } from "react";
 import './sidebar.css'
+import ovalHover from '../../images/Oval_Hover.gif'
 
 class Sidebar extends Component{
   render() {
     return (
-      <div className="Sidebar" style={{color: "blue"}}>
-        <h1 className='decisisons'>Decisions</h1>
+      <div className="sidebar">
+        <h1 id='decisisons'>Decisions</h1>
         <ul className='list'>
-          <SidebarElement name = 'Home'/>
-
-          <li>Home</li>
-          <li>Art</li>
-          <li>Games</li>
-          <li>Code</li>
-          <li>Games</li>
-          <li>Mysterys</li>
+          <SidebarElement id = 'homeIcon' name = 'Home' image = {ovalHover}/>
+          <SidebarElement name = 'Art'/>
+          <SidebarElement name = 'Games'/>
+          <SidebarElement name = 'Code'/>
+          <SidebarElement name = 'Mysterys'/>
         </ul>
       </div>
     );
@@ -25,7 +23,7 @@ class SidebarElement extends Component{
   render() {
     return (
       <li>
-        <image></image>
+        <img src={this.props.image}/>
         {this.props.name}
       </li>
     )
