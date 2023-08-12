@@ -1,3 +1,5 @@
+
+-- make this div hide on the left side of the screen
 div.sidebar {
     background-color: beige;
     padding: 20px;
@@ -11,4 +13,16 @@ div.sidebar li {
 div.sidebar li img {
     width: 50px;
     margin: -20px;;
+}
+
+div.sidebar li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+li.sideBarElement {
+    color: white;
 }

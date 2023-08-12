@@ -22,7 +22,7 @@ class Sidebar extends Component{
 class SidebarElement extends Component{
   render() {
     return (
-      <li>
+      <li className="sideBarElement">
         <img src={this.props.image}/>
         {this.props.name}
       </li>
