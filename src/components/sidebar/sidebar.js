@@ -30,4 +30,17 @@ class SidebarElement extends Component{
   }
 }
 
+
+// react component that takes a string and image and returns a div with the image and string centered
+class SidebarElement2 extends Component{
+  render() {
+    return (
+      <div>
+        <img src={this.props.image}/>
+        {this.props.name}
+      </div>
+    )
+  }
+}
+
 export default Sidebar;

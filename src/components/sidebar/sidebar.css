@@ -4,6 +4,11 @@ div.sidebar {
     display: inline-block;
 }
 
+div.sidebar:hover {
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: get;
+}
+
 div.sidebar li {
     list-style: none;
 }

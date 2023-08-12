@@ -14,5 +14,16 @@ function App() {
   );
 }
 
+// write a function that takes a string and returns a string
+// >imagine function
+// >imagine string
+// >imagine return
+// >imagine string
+
+// write a function that takes a string and returns a string split into an array of characters
+function splitStringIntoArray(string){
+  return string.split('')
+}
+
 
 export default App;
