@@ -1,5 +1,16 @@
 div.Content {
-    padding: 100px;
-    background-color: aqua;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    border: 1px solid white;
     display: inline-block;
+    width: 60%;
+    flex-basis: 0;
+    flex-grow: 999;
+    vertical-align: top;
+    text-align: left;
+    margin-left: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 1);
 }

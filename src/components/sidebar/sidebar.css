@@ -1,12 +1,23 @@
 div.sidebar {
     background-color: beige;
-    padding: 20px;
-    display: inline-block;
+    display: inline-table;
+    position: fixed;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50px, -50%);
+    transition: .5s;
+
 }
 
 div.sidebar:hover {
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: get;
+    transition: .5s;
+    transform: translate(0%, -50%);
+
+}
+
+div.sidebar h1 {
+    display: block;
 }
 
 div.sidebar li {
@@ -16,4 +27,16 @@ div.sidebar li {
 div.sidebar li img {
     width: 50px;
     margin: -20px;;
+}
+
+li.sidebarElement {
+    margin: 10px;
+    padding: 10px;
+    transition: .5s;
+    color: blueviolet;
+}
+
+li.sidebarElement:hover {
+    transition: .5s;
+    color: aqua;
 }

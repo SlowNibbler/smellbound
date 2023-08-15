@@ -1,13 +1,20 @@
 import { Component } from "react";
 import './sidebar.css'
 import ovalHover from '../../images/Oval_Hover.gif'
+import {
+  Routes,
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
 
 class Sidebar extends Component{
   render() {
     return (
       <div className="sidebar">
-        <h1 id='decisisons'>Decisions</h1>
+        <h1>Decisions</h1>
         <ul className='list'>
+          
           <SidebarElement id = 'homeIcon' name = 'Home' image = {ovalHover}/>
           <SidebarElement name = 'Art'/>
           <SidebarElement name = 'Games'/>
@@ -22,9 +29,11 @@ class Sidebar extends Component{
 class SidebarElement extends Component{
   render() {
     return (
-      <li>
-        <img src={this.props.image}/>
-        {this.props.name}
+      <li className="sidebarElement">
+        <NavLink to="/">
+          {this.props.name}
+          <img src={this.props.image}/>
+        </NavLink>
       </li>
     )
   }
@@ -36,8 +45,8 @@ class SidebarElement2 extends Component{
   render() {
     return (
       <div>
-        <img src={this.props.image}/>
         {this.props.name}
+        <img src={this.props.image}/>
       </div>
     )
   }
