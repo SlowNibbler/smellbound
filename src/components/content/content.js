@@ -1,11 +1,6 @@
 import { Component } from "react";
 import './content.css'
-import {
-  Routes,
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
+
 import ArtContainer from './artPage/artPage'
 import Home from './homePage/homePage'
 
@@ -15,13 +10,6 @@ class Content extends Component{
   render() {
     return (
       <div className="content">
-        <HashRouter>
-        <Sidebar/>
-          <Routes>
-            <Route className="homePath" exact path="/" component={Home}/>
-            <Route path="/ArtContainer" component={ArtContainer}/>
-          </Routes>
-        </HashRouter>
 
       </div>
     );
