@@ -23,26 +23,24 @@ function ModelViewer() {
   });
 
   return (
-    <div className="home">
-      <Canvas className="ModelViewer">
-        {/* Camera */}
-        <perspectiveCamera
-          makeDefault
-          position={[0, 0, 0]}
-        />
+    <Canvas className="ModelViewer">
+      {/* Camera */}
+      <perspectiveCamera
+        makeDefault
+        position={[0, 0, 0]}
+      />
 
-        {/* Lighting */}
-        <ambientLight intensity={0.5} />
-        <directionalLight intensity={1.5} position={[2, 1, 2]} />
+      {/* Lighting */}
+      <ambientLight intensity={0.5} />
+      <directionalLight intensity={1.5} position={[2, 1, 2]} />
 
-        {/* Display the loaded 3D model */}
-        <mesh>
-          <primitive object={fbx} scale={[0.03, 0.03, 0.03]} position={[0, -3, 0]} />
-          <meshStandardMaterial map={texture} attach="material" />
-        </mesh>
-        <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2.1} />
-      </Canvas>
-    </div>
+      {/* Display the loaded 3D model */}
+      <mesh>
+        <primitive object={fbx} scale={[0.03, 0.03, 0.03]} position={[0, -3, 0]} />
+        <meshStandardMaterial map={texture} attach="material" />
+      </mesh>
+      <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2.1} />
+    </Canvas>
   );
 }
 

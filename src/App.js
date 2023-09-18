@@ -35,7 +35,6 @@ function Layout() {
     <div className='Layout' >
       <Sidebar/>
       <ContentWrapper />
-    
     </div>
   );
 }
