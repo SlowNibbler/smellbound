@@ -1,4 +1,33 @@
 .App {
   display: block;
+  background-image: url('./images/xiNice.jpg'); /* Replace with the actual path to your image */
+  background-size: cover; /* Adjust the background size as needed */
+  background-repeat: no-repeat; 
+  height: 100vh;
 }
 
+/* main content*/
+.ContentWrapper {
+  flex: 0 1 50%;
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  padding: 20px; /* Add some padding to the content */
+  transition: transform 1s ease; /* Add a smooth transition effect */
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .ContentWrapper {
+    flex: 0 1 90%;
+    transition: transform 1s ease; /* Add a smooth transition effect */
+    margin-left: 0px;
+  }
+}
+
+.Layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: normal;
+  padding: 10px;
+}
