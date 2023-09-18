@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ModelViewer from './modelViewer';
 import './homePage.css';
-import NightmareSwitch from './nightmareSwitch';
+import NightmareSwitch from './nightmareSwitch.js';
 import SoundComponent from './soundComponent.js';
 
 
