@@ -25,11 +25,11 @@ class Sidebar extends Component{
       <div className="Sidebar">
         <h1>Decisions</h1>
         <ul className='list'>
-          <SidebarElement id = 'homeIcon' name = 'Home' image = {oval} link = '/' />
-          <SidebarElement id = 'artIcon' name = 'Art' image = {cube} link = 'art'/>
-          <SidebarElement id = 'gamesIcon' name = 'Games' image = {tri} link = 'games'/>
-          <SidebarElement id = 'codeIcon' name = 'Code' image = {prism} link = 'code'/>
-          <SidebarElement id = 'mysterysIcon' name = 'Mysterys' image = {oval} link = 'mysterys'/>
+          <SidebarElement id = 'homeIcon' name = 'Home' image = {oval} imageHover = {ovalHover} link = '/' />
+          <SidebarElement id = 'artIcon' name = 'Art' image = {cube} imageHover = {cubeHover} link = 'art'/>
+          <SidebarElement id = 'gamesIcon' name = 'Games' image = {tri} imageHover = {triHover} link = 'games'/>
+          <SidebarElement id = 'codeIcon' name = 'Code' image = {prism} imageHover = {prismHover} link = 'code'/>
+          <SidebarElement id = 'mysterysIcon' name = 'Mysterys' image = {oval} imageHover = {ovalHover} link = 'mysterys'/>
         </ul>
       </div>
     );
@@ -38,17 +38,34 @@ class Sidebar extends Component{
 
 
 class SidebarElement extends Component{
+  handleMouseOver = () => {
+      this.imgElement.src = this.props.imageHover;
+  };
+
+  handleMouseOut = () => {
+      this.imgElement.src = this.props.image;
+  };
+
   render() {
     return (
-      <li className="SidebarElement" >
+      <li
+        className="SidebarElement"
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
+      >
         <Link to={this.props.link}>
-          <img src={this.props.image} onMouseOver={hoverIcon(this)}/>
+          <img
+            src={this.props.image}
+            alt="Sidebar Image"
+            ref={(img) => (this.imgElement = img)} // Assign the img element to a ref
+          />
           <span>{this.props.name}</span>
         </Link>
       </li>
-    )
+    );
   }
 }
+
 
 
 

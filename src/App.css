@@ -13,6 +13,8 @@
   padding: 20px; /* Add some padding to the content */
   transition: transform 1s ease; /* Add a smooth transition effect */
   margin-left: 10px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 768px) {

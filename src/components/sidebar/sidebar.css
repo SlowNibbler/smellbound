@@ -6,6 +6,8 @@
     width: fit-content; /* Fixed width for the sidebar */
     padding: 20px; /* Add some padding to the sidebar content */
     z-index: 2;
+    border: 1px solid black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 /* Media query to hide the sidebar on narrow screens (e.g., mobile devices) */

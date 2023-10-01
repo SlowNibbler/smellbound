@@ -8,8 +8,8 @@ import { OrbitControls } from '@react-three/drei'
 import { FBXLoader } from 'three/addons/loaders/FBXLoader';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import * as THREE from 'three';
-import jimModel from '../../../images/3dModels/Jim.fbx';
-import jimTexture from '../../../images/3dModels/JimTexture.png';
+import jimModel from '../../../images/3dModels/Jim/Jim.fbx';
+import jimTexture from '../../../images/3dModels/Jim/JimTexture.png';
 
 function ModelViewer() {
   // Load your FBX model using the FBXLoader
