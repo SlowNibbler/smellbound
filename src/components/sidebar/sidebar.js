@@ -22,7 +22,7 @@ import {
 class Sidebar extends Component{
   render() {
     return (
-      <div className="Sidebar">
+      <div className="Sidebar" id="sidebar">
         <h1>Decisions</h1>
         <ul className='list'>
           <SidebarElement id = 'homeIcon' name = 'Home' image = {oval} imageHover = {ovalHover} link = '/' />
@@ -36,28 +36,71 @@ class Sidebar extends Component{
   }
 }
 
+/**
+ * button class that is either off or on and moves a div when clicked
+ */
+class SidebarButton extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      on: false,
+      position: 0
+    };
+  }
+
+  handleClick = () => {
+    const newTransformValue = this.state.on ? 'translateX(0px)' : 'translateX(-500px)';
+    this.setState({
+      on: !this.state.on,
+      position: document.getElementById('sidebar').style.transform = newTransformValue
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>
+          {this.state.on ? "ON" : "OFF"}
+        </button>
+      </div>
+    );
+  }
+}
+
+
 
 class SidebarElement extends Component{
+
+  mouseOver = false;
+
   handleMouseOver = () => {
-      this.imgElement.src = this.props.imageHover;
+      if (this.mouseOver === false) {
+        this.imgElement.src = this.props.imageHover;
+        this.mouseOver = true;
+        console.log(this.mouseOver);
+      }
   };
 
   handleMouseOut = () => {
-      this.imgElement.src = this.props.image;
+    this.imgElement.src = this.props.image;
+    this.mouseOver = false;
+    console.log(this.mouseOver);
+
   };
 
   render() {
     return (
       <li
         className="SidebarElement"
-        onMouseOver={this.handleMouseOver}
-        onMouseOut={this.handleMouseOut}
+        onMouseEnter={this.handleMouseOver}
+        onMouseLeave={this.handleMouseOut}
       >
         <Link to={this.props.link}>
           <img
             src={this.props.image}
             alt="Sidebar Image"
             ref={(img) => (this.imgElement = img)} // Assign the img element to a ref
+            style={{ display: "block" }}
           />
           <span>{this.props.name}</span>
         </Link>
@@ -69,11 +112,10 @@ class SidebarElement extends Component{
 
 
 
-
 // write a function that changes the source of an image to the hover version
 function hoverIcon(img){
   console.log("img");
   //img.src = img.src.replace(img.src, img.src + 'Hover');
 }
 
-export default Sidebar;
+export {Sidebar, SidebarButton};

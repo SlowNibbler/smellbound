@@ -1,9 +1,11 @@
 .App {
   display: block;
-  background-image: url('./images/xiNice.jpg'); /* Replace with the actual path to your image */
+  background-image: url('./images/homeImages/xiNice.jpg'); /* Replace with the actual path to your image */
   background-size: cover; /* Adjust the background size as needed */
   background-repeat: no-repeat; 
   height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 /* main content*/
@@ -15,6 +17,7 @@
   margin-left: 10px;
   border: 1px solid black;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  display: inline-block;
 }
 
 @media (max-width: 768px) {
@@ -29,7 +32,7 @@
 .Layout {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: normal;
-  padding: 10px;
+  padding-top: 50px;
+  justify-content: center;
 }

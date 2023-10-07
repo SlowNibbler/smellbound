@@ -9,8 +9,7 @@ import {
   Route,
   Outlet
 } from "react-router-dom";
-import Sidebar from './components/sidebar/sidebar';
-import XiNice from './images/xiNice.jpg'
+import { Sidebar, SidebarButton } from './components/sidebar/sidebar';
 
 
 
@@ -33,6 +32,7 @@ function App() {
 function Layout() {
   return (
     <div className='Layout' >
+      <SidebarButton />
       <Sidebar/>
       <ContentWrapper />
     </div>

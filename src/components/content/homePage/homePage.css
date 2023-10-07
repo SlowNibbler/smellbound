@@ -1,4 +1,44 @@
-div.home {
+div.Home {
 }
 
+
+
+
+.HomeContentGrid {
+    display: grid;
+    grid-template-columns:  minmax(0, 1fr) minmax(0, 1fr); /* Two equal-width columns */
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Additional styling for the columns */
+.Left, .Right {
+    max-width: 100%; /* Limit items to the available width */
+}
+
+/* Media query for responsive layout */
+@media (max-width: 600px) {
+.HomeContentGrid {
+    grid-template-columns: 1fr; /* Switch to a single column layout */
+}
+}
+
+.HomeGridItem {
+    border: 1px solid black;    
+    max-width: 100%;
+
+}
+
+.HomeGridItem img {
+    max-width: 100%;
+    height: auto;
+}
+
+.ModelViewer {
+    max-width: 100%;
+}
+#ModelViewerHolder {
+    max-height: 400px;
+    height: 400px;
+}
 
