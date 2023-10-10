@@ -25,6 +25,32 @@ function ModelViewer() {
   const [currentModel, setCurrentModel] = React.useState(jimModel);
   const [currentTexture, setCurrentTexture] = React.useState(jimTexture);
   const [currentModleProps, setCurrentModelProps] = React.useState(modelProps);
+  
+  const canvasRef = React.useRef(null);
+  const modelHolderRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const canvas = canvasRef.current;
+    const modelHolder = modelHolderRef.current;
+
+
+    const resizeCanvas = () => {
+      const newWidth = modelHolder.clientWidth;
+      // Set the height to match the width to maintain a square aspect ratio
+      const newHeight = newWidth;
+      // Update the height of the canvas based on the newWidth
+      canvas.height = newHeight;
+      canvas.width = newWidth;
+    };
+
+    resizeCanvas();
+
+    window.addEventListener('resize', resizeCanvas);
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
 
   const handleSounds = (event) => {
     if (event.type === 'disableSounds') {
@@ -79,26 +105,29 @@ function ModelViewer() {
           });
         }}>Pongo</li>
       </div>
-      <Canvas className="ModelViewer">
-        {/* Camera */}
-        <perspectiveCamera
-          makeDefault
-          position={[0, 0, 0]}
-        />
+      <div className='ModelHolder' ref={modelHolderRef}>
+        <div className="CanvasWrapper">
+          <Canvas className="ModelViewer" ref={canvasRef} style={{ position: 'absolute', width: '100%', height: '100%' }}>
+            {/* Camera */}
+            <perspectiveCamera
+              makeDefault
+              position={[0, 0, 0]}
+            />
 
-        {/* Lighting */}
-        <ambientLight intensity={0.5} />
-        <directionalLight intensity={1.5} position={[2, 1, 2]} />
+            {/* Lighting */}
+            <ambientLight intensity={0.5} />
+            <directionalLight intensity={1.5} position={[2, 1, 2]} />
 
-        {/* Display the loaded 3D model */}
-        <mesh>
-          <primitive object={fbx} scale={currentModleProps.scale} position={currentModleProps.position} />
-          <meshStandardMaterial map={texture} attach="material" />
-        </mesh>
-        <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2.1} />
-      </Canvas>
+            {/* Display the loaded 3D model */}
+            <mesh>
+              <primitive object={fbx} scale={currentModleProps.scale} position={currentModleProps.position} />
+              <meshStandardMaterial map={texture} attach="material" />
+            </mesh>
+            <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2.1} />
+          </Canvas>
+        </div>
+      </div>
     </div>
-    
   );
 }
 
