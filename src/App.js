@@ -13,6 +13,13 @@ import { Sidebar, SidebarButton } from './components/sidebar/sidebar';
 
 
 
+import VideoSpawner from './components/utility/VideoSpawner';
+
+
+import React from 'react';
+
+
+
 function App() {
   return (
     <div className='App'>
@@ -25,6 +32,7 @@ function App() {
           <Route path="mysterys" element={<MysterysContainer />} />
         </Route>
       </Routes>
+
     </div>
   );
 }
@@ -35,6 +43,7 @@ function Layout() {
       <SidebarButton />
       <Sidebar/>
       <ContentWrapper />
+      <VideoSpawner videoSrc="/videos/keepSpinning.webm" />
     </div>
   );
 }

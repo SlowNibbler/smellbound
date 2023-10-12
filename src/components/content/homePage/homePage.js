@@ -29,9 +29,6 @@ class HomePage extends Component{
             <div className="HomeGridItem" id="ModelViewerHolder">
               <ModelViewer/>
             </div>
-            <div className="HomeGridItem">
-              <img src={Smellbound} alt="Smellbound" className="Smellbound"/>
-            </div>
             <NightmareSwitch />
             <SoundComponent />
           </div>
