@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 class VideoSpawner extends React.Component {
   constructor(props) {
     super(props);
     this.videoRef = React.createRef();
+    this.videoElement = null;  // Store the video element reference
   }
+
 
   componentDidMount() {
     document.addEventListener('click', this.spawnVideo);
@@ -12,6 +14,7 @@ class VideoSpawner extends React.Component {
 
   componentWillUnmount() {
     document.removeEventListener('click', this.spawnVideo);
+    this.videoElement && this.videoElement.remove();  // Remove the video if it exists
   }
 
   spawnVideo = () => {
@@ -26,11 +29,13 @@ class VideoSpawner extends React.Component {
     video.style.left = `${Math.random() * window.innerWidth - 200}px`;
     video.style.top = `${Math.random() * window.innerHeight - 200}px`;
     video.style.pointerEvents = 'none';
-    video.addEventListener('click', () => {
+    document.addEventListener('click', () => {
       video.remove();
+      console.log('haaha');
     })
     this.videoRef.current.appendChild(video);
     video.play().catch(error => console.error('Video playback failed:', error));
+    this.videoElement = video;
   };
 
   render() {
