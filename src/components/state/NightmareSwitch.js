@@ -1,25 +1,28 @@
-import React, { useState, useContext } from 'react';
-import { Provider, useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleNightmare, selectNightmareEnabled } from './NightmareSlice';
 
-
-function NightmareSwitch() {
-
-  const nightmareEnabled = useSelector(state => state.nightmareEnabled)
-  const dispatch = useDispatch()
+const NightmareSwitch = () => {
+  const dispatch = useDispatch();
+  const nightmareEnabled = useSelector(selectNightmareEnabled);
 
   const handleToggle = () => {
     dispatch(toggleNightmare());
   };
 
+  useEffect(() => {
+    localStorage.setItem('nightmareEnabled', JSON.stringify(nightmareEnabled));
+  }, [nightmareEnabled]);
 
   return (
     <div>
       <label>
         Enable Nightmare
-        <input type="checkbox" checked={nightmareEnabled} onChange={handleToggle}
- />
+        <input
+          type="checkbox"
+          checked={nightmareEnabled}
+          onChange={handleToggle}
+        />
       </label>
     </div>
   );

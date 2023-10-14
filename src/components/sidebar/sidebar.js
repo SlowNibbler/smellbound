@@ -77,14 +77,14 @@ class SidebarElement extends Component{
       if (this.mouseOver === false) {
         this.imgElement.src = this.props.imageHover;
         this.mouseOver = true;
-        console.log(this.mouseOver);
+        //console.log(this.mouseOver);
       }
   };
 
   handleMouseOut = () => {
     this.imgElement.src = this.props.image;
     this.mouseOver = false;
-    console.log(this.mouseOver);
+    //console.log(this.mouseOver);
 
   };
 
@@ -114,7 +114,7 @@ class SidebarElement extends Component{
 
 // write a function that changes the source of an image to the hover version
 function hoverIcon(img){
-  console.log("img");
+  //console.log("img");
   //img.src = img.src.replace(img.src, img.src + 'Hover');
 }
 
