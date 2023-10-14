@@ -11,39 +11,46 @@ import {
 } from "react-router-dom";
 import { Sidebar, SidebarButton } from './components/sidebar/sidebar';
 
-
+import NightmareStore from './components/state/NightmareStore';
 
 import VideoSpawner from './components/utility/VideoSpawner';
+import { Provider, useSelector } from 'react-redux'
 
 
-import React from 'react';
+import React, { createContext, useState }  from 'react';
 
-
+import { connect } from 'react-redux';
+import { selectNightmareEnabled } from './components/state/NightmareSlice';
 
 function App() {
   return (
-    <div className='App'>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="art" element={<ArtContainer />} />
-          <Route path="games" element={<GamesContainer />} />
-          <Route path="code" element={<CodeContainer />} />
-          <Route path="mysterys" element={<MysterysContainer />} />
-        </Route>
-      </Routes>
-
-    </div>
+    <Provider store={NightmareStore}>
+      <div className='App'>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="art" element={<ArtContainer />} />
+            <Route path="games" element={<GamesContainer />} />
+            <Route path="code" element={<CodeContainer />} />
+            <Route path="mysterys" element={<MysterysContainer />} />
+          </Route>
+        </Routes>
+      </div>
+    </Provider>
   );
 }
 
+
+
 function Layout() {
+  const nightmareEnabled = useSelector(state => state.nightmareEnabled)
+
   return (
     <div className='Layout' >
       <SidebarButton />
       <Sidebar/>
       <ContentWrapper />
-      <VideoSpawner videoSrc="/videos/keepSpinning.webm" />
+      <VideoSpawner videoSrc="/videos/keepSpinning.webm" nightmareEnabled={nightmareEnabled} />
     </div>
   );
 }
@@ -56,7 +63,6 @@ function ContentWrapper() {
     </div>
   );
 }
-
 
 
 export default App;

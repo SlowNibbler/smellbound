@@ -1,8 +1,8 @@
 import { Component } from "react";
 import ModelViewer from './modelViewer';
 import './homePage.css';
-import NightmareSwitch from "./nightmareSwitch";
-import SoundComponent from "./soundComponent";
+import NightmareSwitch from "../../state/NightmareSwitch";
+import SoundComponent from "../../state/soundComponent";
 import Smellbound from "../../../images/homeImages/smelldev.png"
 
 
