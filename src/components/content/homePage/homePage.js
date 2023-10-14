@@ -20,7 +20,7 @@ function HomeContent() {
 
   return (
     <div className="HomeContent">
-      <div className="Name">Smellbound</div>
+      <div className="SmellTitle">Smellbound</div>
       <OpeningQuote />
       
       <div className="HomeContentGrid">
@@ -30,9 +30,19 @@ function HomeContent() {
           </div>
           <div className="HomeGridItem">
             where am it
+            property of James McHugh
+            good internet
+            welcome to the gallery of smellbound. Collection of hand-crafted smell based artforms. avant garde stench
+            french delerium
+            parts of smellbound came out of a test tube
+            
+
           </div>  
           <div className="HomeGridItem">
             what is it
+            restore internet harmony
+            digital demogogue
+            
           </div>  
         </div>
         <div className="Right">
