@@ -22,18 +22,22 @@ var modelProps = {
 
 
 function ModelViewer() {
-  const [currentModel, setCurrentModel] = React.useState(jimModel);
-  const [currentTexture, setCurrentTexture] = React.useState(jimTexture);
+  const [currentModel, setCurrentModel] = React.useState(pongoModel);
+  const [currentTexture, setCurrentTexture] = React.useState(pongoTexture);
   const [currentModleProps, setCurrentModelProps] = React.useState(modelProps);
   
   const canvasRef = React.useRef(null);
   const modelHolderRef = React.useRef(null);
 
+  const mixerRef = React.useRef(null);  // Reference to the mixer
+  const sceneRef = React.useRef(new THREE.Scene()); // Create a scene
+
+  const clockRef = React.useRef(new THREE.Clock());
+
+  // resize window
   React.useEffect(() => {
     const canvas = canvasRef.current;
     const modelHolder = modelHolderRef.current;
-
-
     const resizeCanvas = () => {
       const newWidth = modelHolder.clientWidth;
       // Set the height to match the width to maintain a square aspect ratio
@@ -42,11 +46,8 @@ function ModelViewer() {
       canvas.height = newHeight;
       canvas.width = newWidth;
     };
-
     resizeCanvas();
-
     window.addEventListener('resize', resizeCanvas);
-
     return () => {
       window.removeEventListener('resize', resizeCanvas);
     };
@@ -76,6 +77,71 @@ function ModelViewer() {
       child.material = new THREE.MeshStandardMaterial({ map: texture });
     }
   });
+
+  // const [fbx, setFbx] = React.useState(null);
+  // const [texture] = React.useState(new THREE.TextureLoader().load(pongoTexture));
+
+  React.useEffect(() => {
+    const loader = new FBXLoader();
+    loader.load(currentModel, (fbx) => {
+      const mixer = new THREE.AnimationMixer(fbx);
+      fbx.animations.forEach((clip, index) => {
+        console.log(`Animation ${index}: ${clip.name}`);
+      })
+
+      const action = mixer.clipAction(fbx.animations[1]);
+      action.setEffectiveTimeScale(1);
+      action.setEffectiveWeight(1);
+      action.play();
+
+      // Store the mixer in the ref
+      mixerRef.current = mixer;
+
+      // Assuming you have a mesh in the FBX, apply the texture
+      fbx.traverse((child) => {
+        if (child.isMesh) {
+          child.material = new THREE.MeshStandardMaterial({ map: texture });
+        }
+      });
+
+      // Assuming you have a valid camera and controls
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 0, 5);
+
+      // Assuming you have a valid renderer
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // Assuming you have a mesh to add to the scene
+      // Adjust this based on your application structure
+      sceneRef.current.add(fbx);
+      action.timeScale = 1.0; // Adjust as needed
+
+      const animate = () => {
+        const deltaTime = clockRef.current.getDelta();
+
+        requestAnimationFrame(animate);
+        // Update the mixer and other animations using deltaTime
+        if (mixerRef.current) {
+          mixerRef.current.update(deltaTime);
+        }
+        if (mixerRef.current) mixerRef.current.update(0.1);
+        renderer.render(sceneRef.current, camera);
+      };
+
+      console.log('animate')
+      animate();
+
+
+    });
+  }, [currentModel, texture]);  // Ensure useEffect runs when model or texture changes
+
+
+
+  console.log('FBX Object:', fbx);
+  console.log('Texture Object:', texture);
+
 
   window.addEventListener('disableSounds', handleSounds);
   window.addEventListener('enableSounds', handleSounds);
