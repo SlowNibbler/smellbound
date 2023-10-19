@@ -17,7 +17,7 @@ const NightmareSwitch = () => {
   return (
     <div>
       <label>
-        Enable Nightmare
+        Enable Boogie
         <input
           type="checkbox"
           checked={nightmareEnabled}

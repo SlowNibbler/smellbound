@@ -33,7 +33,7 @@ class VideoSpawner extends React.Component {
 
     
     const { nightmareEnabled } = this.props;
-    console.log(nightmareEnabled)
+    //console.log(nightmareEnabled)
 
     if (nightmareEnabled) {
       const video = document.createElement('video');
@@ -49,7 +49,7 @@ class VideoSpawner extends React.Component {
       video.style.pointerEvents = 'none';
       document.addEventListener('click', () => {
         video.remove();
-        console.log('haaha');
+        //console.log('haaha');
       })
       this.videoRef.current.appendChild(video);
       video.play().catch(error => console.error('Video playback failed:', error));

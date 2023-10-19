@@ -42,6 +42,13 @@ div.Home {
 .ModelListItem {
     display: inline-block;
     border: 1px solid black; 
+    border-top: none;
+    padding-left: .2em;
+    padding-right: .2em;   
+}
+
+.ModelListItem :hover {
+    cursor:crosshair
 }
 
 #ModelViewerHolder {
@@ -55,14 +62,18 @@ div.Home {
 }
 
 .ModelHolder {
-    border: 1px solid black; 
     width: 100%; /* Ensures the square div takes full width of the parent */
-    padding-bottom: 100%;
     position: relative;
 }
 
 .CanvasWrapper {
-    width: 100%;
-    height: 100%; /* Adjust this height as needed */
-}
+    border: 1px solid black; 
+    aspect-ratio: 1/1;
+    margin: auto;
+    cursor: grab
 
+}
+.CanvasWrapper :active {
+    cursor: grabbing
+
+}
