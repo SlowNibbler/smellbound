@@ -1,6 +1,5 @@
 import { Component } from "react";
-import ModelViewer from './modelViewer';
-import ModelViewerNew from './models/modelViewerNew';
+import ModelViewer from './modelViewer/ModelViewer'
 
 import './homePage.css';
 import NightmareSwitch from "../../state/NightmareSwitch";
@@ -49,7 +48,7 @@ function HomeContent() {
         </div>
         <div className="Right">
           <div className="HomeGridItem" id="ModelViewerHolder">
-            <ModelViewerNew/>
+            <ModelViewer/>
           </div>
           <NightmareSwitch nightmareEnabled={nightmareEnabled} />
           <SoundComponent />

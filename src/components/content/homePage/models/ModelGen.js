@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
 export default function ModelGen(props) {
+
+  const { nodes, animations } = useGLTF(props.model);
     
   // Fetch model and a separate texture
-  const { nodes, animations } = useGLTF(props.model);
   // Extract animation actions
   const { ref, actions, names } = useAnimations(animations);
   // Hover and animation-index states
