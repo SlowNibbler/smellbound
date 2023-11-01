@@ -2,26 +2,38 @@
 import { useEffect, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
-export default function ModelGen(props) {
-    
-  // Fetch model and a separate texture
-  const { nodes, animations } = useGLTF(props.model);
-  // Extract animation actions
-  const { ref, actions, names } = useAnimations(animations);
-  // Hover and animation-index states
-  const [hovered, setHovered] = useState(false);
+import { useFrame } from "@react-three/fiber"
 
-  // Change cursor on hover-state
-  useEffect(() => {
-    document.body.style.cursor = hovered ? "pointer" : "auto";
-  }, [hovered]);
+import PongoModel from "./PongoModel.js"
 
-  return (
-    <group ref={ref} {...props} dispose={null}>
-      <group rotation={[Math.PI / 2, 0, 0]} scale={0.1}>
-        {/* Use nodes directly to render the model */}
-        <mesh object={nodes.mesh} />
+
+
+import React, { useRef } from 'react';
+
+function Model({ activeModel }) {
+  const group = useRef();
+  const { nodes, materials, animations } = useGLTF(activeModel.model);
+  const { actions, mixer } = useAnimations(animations, group);
+
+  useFrame((state, delta) => {
+    mixer.update(delta);
+  });
+
+  if (activeModel.name === 'Pongo') {
+    return (
+      <PongoModel activeModel={activeModel}/>
+    )
+  } else {
+    return (
+      <group ref={group} >
+        <mesh material={materials['Material']} geometry={nodes['Mesh'].geometry} scale={activeModel.scale} position={activeModel.position} rotation={activeModel.rotation}>
+          <meshStandardMaterial map={materials['Material'].map} />
+        </mesh>
       </group>
-    </group>
-  );
+    );
+  }
+
+  
 }
+
+export default Model;

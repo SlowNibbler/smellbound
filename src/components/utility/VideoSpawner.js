@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { connect } from 'react-redux';
-import { selectNightmareEnabled } from '../state/NightmareSlice';
+import { selectNightmareEnabled } from '../state/Quests/QuestSlice';
 
 
 
@@ -47,6 +47,7 @@ class VideoSpawner extends React.Component {
       video.style.left = `${Math.random() * window.innerWidth - 200}px`;
       video.style.top = `${Math.random() * window.innerHeight - 200}px`;
       video.style.pointerEvents = 'none';
+      video.style.zIndex = 0;
       document.addEventListener('click', () => {
         video.remove();
         //console.log('haaha');
@@ -58,7 +59,7 @@ class VideoSpawner extends React.Component {
   };
 
   render() {
-    return <div ref={this.videoRef}></div>;
+    return <div className='VideoSpawner' ref={this.videoRef}></div>;
   }
 }
 

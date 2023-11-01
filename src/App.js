@@ -1,30 +1,26 @@
 import './App.css';
-import HomePage  from './components/content/homePage/homePage';
-import ArtContainer from './components/content/artPage/artPage';
-import GamesContainer from './components/content/gamesPage/gamesPage';
-import MysterysContainer from './components/content/mysterysPage/mysterysPage';
-import CodeContainer from './components/content/codePage/codePage';
+import { Provider, useSelector } from 'react-redux'
+import React from 'react';
 import {
   Routes,
   Route,
   Outlet
 } from "react-router-dom";
+
+import HomePage  from './components/content/homePage/homePage';
+import ArtContainer from './components/content/artPage/artPage';
+import GamesContainer from './components/content/gamesPage/gamesPage';
+import MysterysContainer from './components/content/mysterysPage/mysterysPage';
+import CodeContainer from './components/content/codePage/codePage';
 import { Sidebar, SidebarButton } from './components/sidebar/sidebar';
-
-import NightmareStore from './components/state/NightmareStore';
-
+import QuestStore from './components/state/Quests/QuestStore';
 import VideoSpawner from './components/utility/VideoSpawner';
-import { Provider, useSelector } from 'react-redux'
+import InfiniteWebsiteScroll from './components/utility/InfiniteWebsiteScroll';
 
-
-import React, { createContext, useState }  from 'react';
-
-import { connect } from 'react-redux';
-import { selectNightmareEnabled } from './components/state/NightmareSlice';
 
 function App() {
   return (
-    <Provider store={NightmareStore}>
+    <Provider store={QuestStore}>
       <div className='App'>
         <Routes>
           <Route path="/" element={<Layout />}>

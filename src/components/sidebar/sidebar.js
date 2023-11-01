@@ -23,7 +23,7 @@ class Sidebar extends Component{
   render() {
     return (
       <div className="Sidebar" id="sidebar">
-        <h1>Decisions</h1>
+        <h2>Decisions</h2>
         <ul className='list'>
           <SidebarElement id = 'homeIcon' name = 'Home' image = {oval} imageHover = {ovalHover} link = '/' />
           <SidebarElement id = 'artIcon' name = 'Art' image = {cube} imageHover = {cubeHover} link = 'art'/>
@@ -58,7 +58,7 @@ class SidebarButton extends Component{
 
   render() {
     return (
-      <div>
+      <div className="SidebarButton">
         <button onClick={this.handleClick}>
           {this.state.on ? "ON" : "OFF"}
         </button>

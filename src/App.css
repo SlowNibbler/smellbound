@@ -1,25 +1,32 @@
 .App {
   display: block;
-  background-image: url('./images/homeImages/xiNice.jpg');  /*Replace with the actual path to your image */
+  background-image: url(./images/homeImages/maskwall.png);
+  background-color: rgb(42, 140, 197);
+  /* background-image: url('./images/homeImages/xiNice.jpg');  Replace with the actual path to your image */
   background-size: cover; /* Adjust the background size as needed */
   background-repeat: no-repeat; 
   height: 100vh;
   justify-content: center;
   align-items: center;
   font-family:monospace;
-  font-size: 1.2em;
+  font-size: 1.25em;
 }
 
 /* main content*/
 .ContentWrapper {
-  flex: 0 1 50%;
+  flex: 0 1 60%;
   backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-  padding: 20px; /* Add some padding to the content */
+  padding: 15px; /* Add some padding to the content */
   transition: transform 1s ease; /* Add a smooth transition effect */
   margin-left: 10px;
-  border: 1px solid black;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  border: 2px solid rgb(255, 242, 213);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
   display: inline-block;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgb(255, 242, 213);
+  border-radius: 15px; /* Adjust the value to control the amount of rounding */
+  z-index: 2;
+
 }
 
 @media (max-width: 768px) {
@@ -28,6 +35,8 @@
     flex: 0 1 90%;
     transition: transform 1s ease; /* Add a smooth transition effect */
     margin-left: 0px;
+    z-index: 2;
+
   }
 }
 
@@ -43,12 +52,12 @@
   width: 100%;
   height: 100%;
   display: block;
-  z-index: 2;
+  z-index: -1;
 }
 
 #videoContainer {
   display: block;
-  z-index: 2;
+  z-index: -1;
   position: absolute;
   /* Set other styling properties like width, height, etc. as needed */
 }

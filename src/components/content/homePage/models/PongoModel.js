@@ -9,15 +9,13 @@ import { useEffect, useState, useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 import { useGLTF, useTexture, useAnimations, useFBX, OrbitControls } from "@react-three/drei"
 import { FBXLoader, MeshBasicMaterial, Texture } from "three";
-import { selectNightmareEnabled } from '../../../state/NightmareSlice';
+import { selectNightmareEnabled } from '../../../state/Quests/QuestSlice';
 import { Provider, useSelector } from 'react-redux'
-import nightmareStore from '../../../state/NightmareStore';
 
 
-export default function PongoModel(props) {
+export default function PongoModel({ activeModel }) {
   // Fetch model and a separate texture
-  const texture = useTexture(props.texture)
-  const { nodes, animations } = useGLTF(props.model)
+  const { nodes, animations, materials } = useGLTF(activeModel.model)
   // Extract animation actions
   const { ref, actions, names } = useAnimations(animations)
   // Hover and animation-index states
@@ -26,11 +24,9 @@ export default function PongoModel(props) {
 
   // Change cursor on hover-state
   useEffect(() => void (document.body.style.cursor = hovered ? "pointer" : "auto"), [hovered])
-  const nightmareEnabled = useSelector((state)=>state.nightmare.nightmareEnabled)
+  const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
   // Change animation when the index changes
   useEffect(() => {
-    console.log('fsdsfsf' + nightmareEnabled)
-
     if (nightmareEnabled) {
 
       // Reset and fade in animation after an index has been changed
@@ -41,10 +37,8 @@ export default function PongoModel(props) {
     }
   });
   
-
-  console.log('efeee')
   return (
-    <group ref={ref} {...props} dispose={null}>
+    <group ref={ref} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
         <primitive object={nodes.mixamorigHips} />
         <skinnedMesh
@@ -57,7 +51,7 @@ export default function PongoModel(props) {
           skeleton={nodes.Cube004.skeleton}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={100}>
-          <meshStandardMaterial map={texture} map-flipY={false} skinning />
+          <meshStandardMaterial map={materials['Material.001'].map} map-flipY={false} skinning />
         </skinnedMesh>
       </group>
 
