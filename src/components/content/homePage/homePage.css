@@ -73,8 +73,8 @@ div.Home {
     border: 1px solid rgb(255, 242, 213);
     aspect-ratio: 1/1;
     margin: auto;
-    cursor: grab
-
+    cursor: grab;
+    display: grid;
 }
 .CanvasWrapper :active {
     cursor: grabbing

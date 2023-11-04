@@ -2,6 +2,8 @@ import React, { useEffect, useState, Component } from "react"
 import './artPage.css'
 import ModelViewer from "../homePage/models/ModelViewer";
 import Model from "../homePage/models/Model";
+import { Provider, useSelector } from 'react-redux'
+
 
 import { Canvas, useThree  } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
@@ -9,6 +11,9 @@ import { OrbitControls } from "@react-three/drei"
 const SculptingContent = ({ activeMedium }) => {
     const [activeContent, setActiveContent] = useState(Object.values(activeMedium.content)[0]);
   
+
+    const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
+
     console.log(activeContent)
 
     return (
@@ -24,7 +29,7 @@ const SculptingContent = ({ activeMedium }) => {
         </ul>
         <div className="ImageGallery">
           {activeContent.images.map((image, index) => (
-            <CanvasWrapper key={index} activeModel={image} index={index}/>
+            <CanvasWrapper nightmareEnabled={nightmareEnabled} key={index} activeModel={image} index={index}/>
           ))}
         </div>
       </div>
@@ -32,24 +37,45 @@ const SculptingContent = ({ activeMedium }) => {
   };
 
 
-  const CanvasWrapper = ({ activeModel, index }) => {
+  const CanvasWrapper = ({ activeModel, index, nightmareEnabled }) => {
 
-    return (
-      <div className="ScultpoWrap" key={index}>
-        <div className="image-info">
-          {activeModel.name}
-          {activeModel.text}
+    if (nightmareEnabled && activeModel.nightmare != null) {
+      return (
+        <div className="ScultpoWrap" key={index}>
+          <div className="image-info">
+            {activeModel.name}
+            {activeModel.text}
+          </div>
+          <Canvas className="ModelViewer" shadows camera={{ position: [2, 0, 4.5], fov: 50 }}>
+            <OrbitControls/>
+            <ambientLight />
+            <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
+            <group position={[0, 0, 0]} scale={[.5, .5, .5]}>
+              <Model activeModel={activeModel.nightmare}/>
+            </group>
+          </Canvas>
         </div>
-        <Canvas className="ModelViewer" shadows camera={{ position: [2, 0, 4.5], fov: 50 }}>
-          <OrbitControls/>
-          <ambientLight />
-          <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
-          <group position={[0, 0, 0]} scale={[.5, .5, .5]}>
-            <Model activeModel={activeModel.model}/>
-          </group>
-        </Canvas>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="ScultpoWrap" key={index}>
+          <div className="image-info">
+            {activeModel.name}
+            {activeModel.text}
+          </div>
+          <Canvas className="ModelViewer" shadows camera={{ position: [2, 0, 4.5], fov: 50 }}>
+            <OrbitControls/>
+            <ambientLight />
+            <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
+            <group position={[0, 0, 0]} scale={[.5, .5, .5]}>
+              <Model activeModel={activeModel.model}/>
+            </group>
+          </Canvas>
+        </div>
+      );
+    }
+
+    
   }
   
   export default SculptingContent

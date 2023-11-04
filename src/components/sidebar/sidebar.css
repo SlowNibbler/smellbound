@@ -7,11 +7,11 @@
     padding: 20px; /* Add some padding to the sidebar content */
     z-index: 2;
     border: 2px solid rgb(255, 242, 213);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     color: rgb(255, 242, 213);
     display: inline-block;
     border-radius: 15px; /* Adjust the value to control the amount of rounding */
-
+    height: fit-content;
 }
 
 .Sidebar h2 {

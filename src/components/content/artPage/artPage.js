@@ -121,6 +121,11 @@ import Trungus from '../../../images/3dModels/Trungus1.glb'
 import ElJefe from '../../../images/3dModels/El_Jefe1.glb'
 import ImageViewer from "./PictureShow.js"
 
+// Blender
+import Legs from '../../../images/Art/Models/legs.glb'
+import LegsAlt from '../../../images/Art/Models/legsNeon.glb'
+import Crab from '../../../images/Art/Models/bairdiCrab.glb'
+
 
 
 class ImageObj {
@@ -159,6 +164,14 @@ const TrungusObj = new ModelObj('Trungus', Trungus, [50, 50, 50], [0, -2, 0]);
 const TrungusMdl = new ImageObj(Trungus, null, 'Trungus', 'Look at Trungus!', TrungusObj);
 const ElJefeObj = new ModelObj('ElJefe', ElJefe, [35, 35, 35], [0, -2, 0]);
 const ElJefeMdl = new ImageObj(ElJefe, null, 'ElJefe', 'Look at ElJefe!', ElJefeObj);
+
+// Models
+const LegsOj = new ModelObj('Legs', Legs, [.05, .05, .05], [0, 0, 0]);
+const LegsAltOj = new ModelObj('Legs', LegsAlt, [.05, .05, .05], [0, 0, 0]);
+
+const LegsMdl = new ImageObj(Legs, LegsAltOj, 'ElJefe', 'Look at ElJefe!', LegsOj);
+const CrabOj = new ModelObj('Crab', Crab, [.02, .02, .02], [0, 0, 0]);
+const CrabMdl = new ImageObj(Crab, null, 'ElJefe', 'Look at ElJefe!', CrabOj);
 
 // Photoshop
 const BloobornePs = new ImageObj(PsBloodborne, null, 'Blugerborne', 'its gamieng')
@@ -285,10 +298,47 @@ function ArtContent() {
     {
       name: 'Drawing',
       content: {
+        Photoshop: {
+          name: 'Photoshop',
+          images: [
+            BloobornePs,
+            EldenShrekPs,
+            BlueDemonPs,
+            JojoBogsPs,
+            ChimpPs,
+            StrahdLadsPs,
+            HandsPs,
+            GreekBogPs,
+            JebPs,
+            MustangPs,
+            CowboyPs,
+            PongoPs,
+            ToshiroPs,
+          ]
+        },
+        Crayon: {
+          name: 'Crayon',
+          images: [
+            DuxiuCr,
+            ZhonfaCr,
+            GuCr,
+            AlienCr,
+            BaronCr,
+            MartyCr,
+            GekCr,
+            GilgameshCr,
+            GrassKnightCr,
+            JintaoCr,
+            NightBeachCr,
+            ShapeHillsCr, 
+            SleeperCr,
+            SpelboCr
+          ]
+        },
         Sketchbook1: {
           name: 'Sketchbook #1',
           images: [
-            OfficeDr,
+            //OfficeDr,
             BeastDr,
             BogJojoDr,
             BogPracDr,
@@ -312,7 +362,7 @@ function ArtContent() {
             KingEmailDr,
             KKDr,
             KnightDr,
-            ScreensDr,
+            //ScreensDr,
             IslandsDr,
             MessKidDr,
             NakesDr,
@@ -325,9 +375,9 @@ function ArtContent() {
             ShumashDr,
             SmilesDr,
             SmokeDr,
-            SillyDr, 
+            //SillyDr, 
             SomethingDr,
-            CodingDr,
+            //CodingDr,
             GovDr,
             TrailerDr,
             TravelerDr,
@@ -354,44 +404,8 @@ function ArtContent() {
             FunnyBotDr,
             RobotsDr
           ]
-        }, 
-        Crayon: {
-          name: 'Crayon',
-          images: [
-            DuxiuCr,
-            ZhonfaCr,
-            GuCr,
-            AlienCr,
-            BaronCr,
-            MartyCr,
-            GekCr,
-            GilgameshCr,
-            GrassKnightCr,
-            JintaoCr,
-            NightBeachCr,
-            ShapeHillsCr, 
-            SleeperCr,
-            SpelboCr
-          ]
-        },
-        Gubo: {
-          name: 'Photoshop',
-          images: [
-            BloobornePs,
-            EldenShrekPs,
-            BlueDemonPs,
-            JojoBogsPs,
-            ChimpPs,
-            StrahdLadsPs,
-            HandsPs,
-            GreekBogPs,
-            JebPs,
-            MustangPs,
-            CowboyPs,
-            PongoPs,
-            ToshiroPs,
-          ]
         }
+        
       }
     },
     {
@@ -406,13 +420,6 @@ function ArtContent() {
             GnomeSunsetPa
           ]
         }, 
-        setTwo: {
-          name: 'Second Batch',
-          images: [
-            GoblinChillPa,
-            OutbackPa
-          ]
-        },
         setThree: {
           name: 'Eastern Wa',
           images: [
@@ -440,45 +447,36 @@ function ArtContent() {
         setTwo: {
           name: 'Blender',
           images: [
-            TumboMdl,
-            TumboMdl
+            LegsMdl,
+            CrabMdl
           ]
         }
       }
     }
   ];
 
+  const defaultMedium = mediums[0]; // Set your default model here
 
-  const [activeMedium, setActiveMedium] = useState(mediums[0]); // Set your default model here
+  // Initialize activeMedium from session storage or default value
+  const storedMedium = sessionStorage.getItem('activeMedium');
+  const initialActiveMedium = storedMedium ? JSON.parse(storedMedium) : defaultMedium;
+  console.log(initialActiveMedium);
   
-  // Define a key to store the state in localStorage
-  const localStorageKey = 'activeMedium';
-
+  const [activeMedium, setActiveMedium] = useState(initialActiveMedium);
   
-
-
-  // Load the state from localStorage when the component mounts
+  // Use an effect to save the activeMedium to session storage whenever it changes
   useEffect(() => {
-    const savedState = localStorage.getItem(localStorageKey);
-    console.log('set mediusm')
-
-    if (savedState) {
-      console.log('set mediusm')
-      console.log(JSON.parse(savedState));
-      setActiveMedium(JSON.parse(savedState));
-    }
-  }, []);
-
-  // Save the state to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem(localStorageKey, JSON.stringify(activeMedium));
+    sessionStorage.setItem('activeMedium', JSON.stringify(activeMedium));
   }, [activeMedium]);
   
+
   return (
     <div className="ArtPageContent">
-      <div className="ArtTitle">Art</div>
-      <div className="ArtText">I just like making stuff, simple as</div>
-      <div>{activeMedium.name}</div>
+      <div className="artInfo">
+          <h1>Art</h1>
+          <p>idk I just keep making stuff cause it's fun
+          </p>
+        </div>
       <MediumsList mediums={mediums} setActiveMedium={setActiveMedium} activeMedium={activeMedium}/>
       <ArtConent activeMedium={activeMedium}/>
     </div>

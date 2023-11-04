@@ -5,42 +5,74 @@ import PictureShow from './PictureShow.js';
 
 
 const DrawingContent = ({ activeMedium }) => {
-    const [activeContent, setActiveContent] = useState(Object.values(activeMedium.content)[0]);
-    console.log(activeContent)
+  const defaultContent = Object.values(activeMedium.content)[0]; // Set your default model here
 
-    const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
+  // Initialize activeMedium from session storage or default value
+  const storedContent = sessionStorage.getItem('activeContent');
+  const initialActiveContent = storedContent ? JSON.parse(storedContent) : defaultContent;
+  //console.log(initialActiveContent);
 
 
-      // Use useEffect to perform actions when activeMedium changes
-    useEffect(() => {
+  
+  const [activeContent, setActiveContent] = useState(initialActiveContent);
+
+  // Use an effect to save the activeMedium to session storage whenever it changes
+  useEffect(() => {
+    sessionStorage.setItem('activeContent', JSON.stringify(activeContent));
+  }, [activeContent]);
+    
+
+
+
+  const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
+
+
+  //   // Use useEffect to perform actions when activeMedium changes
+  useEffect(() => {
+
+
+    if (activeContent === JSON.parse(sessionStorage.getItem('activeContent'))) {
+      setActiveContent(sessionStorage.getItem('activeContent'))
+      console.log('match')
+    } else {
       setActiveContent(Object.values(activeMedium.content)[0])
+      sessionStorage.setItem('activeContent', JSON.stringify(activeContent));
       console.log("Component was reloaded/reset. New activeMedium:", activeMedium);
+    }
+    console.log('adadadda');
+    console.log(activeContent);
+    console.log(storedContent);
 
-    }, [activeMedium]);
-    const [viewerOpen, setViewerOpen] = useState(false);
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-    const openImageViewer = (index) => {
-      setCurrentImageIndex(index);
-      setViewerOpen(true);
-      console.log('hsass');
-    };
+  }, [activeMedium]);
 
-    const closeViewer = () => {
-      setViewerOpen(false);
-    };
-  
-    const nextImage = () => {
-      // Implement logic to go to the next image
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % activeContent.images.length);
-    };
-  
-    const prevImage = () => {
-      // Implement logic to go to the previous image
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === 0 ? activeContent.images.length - 1 : prevIndex - 1
-      );
-    };
+  // Use an effect to save the activeMedium to session storage whenever it changes
+
+    
+
+  const [viewerOpen, setViewerOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openImageViewer = (index) => {
+    setCurrentImageIndex(index);
+    setViewerOpen(true);
+    //console.log('hsass');
+  };
+
+  const closeViewer = () => {
+    setViewerOpen(false);
+  };
+
+  const nextImage = () => {
+    // Implement logic to go to the next image
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % activeContent.images.length);
+  };
+
+  const prevImage = () => {
+    // Implement logic to go to the previous image
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? activeContent.images.length - 1 : prevIndex - 1
+    );
+  };
 
     return (
       <div className="ArtContent">
@@ -78,8 +110,6 @@ const DrawingContent = ({ activeMedium }) => {
   };
 
   const Image = ({image, index, nightmareEnabled}) => {
-    console.log(image)
-    console.log(image.alt != null)
     if (nightmareEnabled && image.nightmare != null) {
       return (
         <a key={index} className="image-link" rel="noopener noreferrer">
