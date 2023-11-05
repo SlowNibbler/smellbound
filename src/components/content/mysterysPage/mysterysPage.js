@@ -1,38 +1,70 @@
 import { Component } from "react";
-import {
-  Routes,
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
+
+import './mysterysPage.css';
+import { Provider, useSelector } from 'react-redux'
 
 
-// rename ArtContainer to MysterysContainer and rewrite the class to match the new name
-
-class MysterysContainer extends Component{
+class MysterysPage extends Component{
   render() {
-    return (
-      <div className="mystery">
-        <p>There is a mystery here. Can you find it?</p>
-        <FlashingImage/>
-           
-      </div>
+    return(
+      <MysteryContent/>
     );
   }
 }
 
+function MysteryContent() {
+  const nightmareEnabled = useSelector(state => state.nightmareEnabled)
 
-// react component that is an image which flashes between two images and randomly changes it's location on the screen every 30 seconds
-class FlashingImage extends Component{
-  render() {
-    return (
-      <div className="flashingImage">
-        <image src="https://i.imgur.com/4Q3QW0u.png" alt="flashing image" />
-        
+  return (
+    <div className="HomeContent">
+      <div className="SmellTitle">Smellbound</div>
+      <OpeningQuote />
+      
+      <div className="HomeContentGrid">
+        <div className="Left">
+          <div className="HomeGridItem">
+          </div>
+          <div className="HomeGridItem">
+            where am it
+            property of James McHugh
+            good internet
+            welcome to the gallery of smellbound. Collection of hand-crafted smell based artforms. avant garde stench
+            french delerium
+            parts of smellbound came out of a test tube
+            
+
+          </div>  
+          <div className="HomeGridItem">
+            what is it
+            restore internet harmony
+            digital demogogue
+            https://en.wikipedia.org/wiki/Leader_of_the_Chinese_Communist_Party
+          </div>  
+          <div className="HomeGridItem">
+            here are three images
+            
+          </div>
+        </div>
+        <div className="Right">
+
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
+// function that returns a div containting a random string from a list of strings
+function OpeningQuote() {
+  const quotes = [
+    "Welcome to Smellbound",
+    "Welcome to Baseball",
+  ];
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  return (
+    <div className="HomeTitle">{randomQuote}</div>
+  );
 }
 
 
-export default MysterysContainer;
+
+export default MysterysPage;

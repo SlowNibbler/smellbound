@@ -17,12 +17,23 @@
 .MediumListItem {
     display: inline-block;
     border: 1px solid rgb(255, 242, 213);
-    border-bottom: none;
     padding-left: .4em;
     padding-right: .4em;   
     padding-top: .1em;
     padding-bottom: .1em;
+    margin-bottom: -1px;
+}
 
+.MediumListItem:first-of-type {
+  border-radius: 10px 0px 0px 0px;
+}
+
+.MediumListItem:last-of-type {
+  border-radius: 0px 10px 0px 0px;
+}
+
+.MediumListItem:hover {
+  cursor: pointer;
 }
 
 .ArtContent {
@@ -44,6 +55,14 @@
     padding-bottom: .1em;
 }
 
+.SubListItem:last-of-type {
+  border-radius: 0px 10px 0px 0px;
+}
+
+.SubListItem:hover {
+  cursor: pointer;
+}
+
 #selected {
     background-color: rgb(251, 240, 196);
     color: rgb(50, 106, 138);
@@ -54,13 +73,18 @@
     padding: 15px;
     display: grid;
     grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Maximum 3 images per row */
-    gap: 10px; /* Adjust the gap as needed */
+    gap: 15px; /* Adjust the gap as needed */
     overflow: auto; /* Enable vertical scrolling when content exceeds the maximum height */
     max-height: 67vh; /* Set your desired maximum height */
-
+    border-radius: 0px 10px 10px 10px
 }
 
-
+/* Media query for 700px and above */
+@media (max-width: 1500px ) and (min-width: 1200px) {
+  .ImageGallery {
+      grid-template-columns: repeat(3, 1fr); /* One image per row */
+  }
+}
 
 /* Media query for 700px and above */
 @media (max-width: 1200px) and (min-width: 900px) {
@@ -235,6 +259,7 @@
   .image-info-bottom {
     display: flex;
     margin: 15px;
+    align-items: center;
   }
 
   .image-info-bottom-desc {
@@ -246,7 +271,8 @@
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-    width: 30vw
+    width: 30vw;
+    text-align: center;
   }
 
   .Arrow img {
@@ -259,6 +285,7 @@
     border: white solid 1px;
     border-radius: 10px;
     padding: 10px;
+    margin-bottom: 15px;
 }
 
 .artInfo h1 {
@@ -275,4 +302,29 @@
     color: white;
     text-align: center;
     margin: 4px;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px solid rgb(255, 242, 213);
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 242, 213); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 242, 213); 
 }

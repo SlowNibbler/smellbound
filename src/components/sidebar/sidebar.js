@@ -85,7 +85,6 @@ class SidebarElement extends Component{
     this.imgElement.src = this.props.image;
     this.mouseOver = false;
     //console.log(this.mouseOver);
-
   };
 
   render() {

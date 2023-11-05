@@ -8,9 +8,14 @@ import {
 
 import '../gamesPage/gamesPage.css'
 
-import babelThumb from '../../../images/Games/babelThumb.png'
-import bigIromThumb from '../../../images/Games/bigironThumb.png'
-import sotbsThumb from '../../../images/Games/sotbsThumb.png'
+import thumb2048 from '../../../images/Games/2048Thumb.png'
+import mudThumb from '../../../images/Games/mudThumb.png'
+import pdThumb from '../../../images/Games/pdThumb.png'
+import toeThumb from '../../../images/Games/toeThumb.png'
+import zombieThumb from '../../../images/Games/zombieThumb.png'
+import pacmanThumb from '../../../images/Games/pacThumb.png'
+
+
 
 class CodeContainer extends Component{
   render() {
@@ -26,25 +31,25 @@ class CodeContainer extends Component{
                   desc="D&D companion app I made for an android development class.
                         I spent countless late nights reworking the entire app around week 5 or
                         so because my team and I had built ourselves into a corner. I don't want
-                        to touch android code for a while after that." year="Spring 2020" img={babelThumb}/>
-          <GameCard title="MudRoom" url="anim.html"
-                  desc="Internet mudroom." year="Winter 2020" img={babelThumb}/>
-          <GameCard title="Zombie AI" url="zombies.html"
+                        to touch android code for a while after that." year="Spring 2020" img={pdThumb}/>
+          <GameCard title="MudRoom" url="/aiProjects/animations/anim.html"
+                  desc="Internet mudroom." year="Winter 2020" img={mudThumb}/>
+          <GameCard title="Zombie AI" url="/aiProjects/zombies/zombies.html"
                   desc="Final project for an AI class. The lil green guys are taking their orders
                         from my AI and try to stay 'alive' for as long as possible by throwing
-                        'rocks' at the red zombie fellas. My guys do alright." year="Winter 2020" img={babelThumb}/>
-          <GameCard title="2048 AI" url="2048.html"
+                        'rocks' at the red zombie fellas. My guys do alright." year="Winter 2020" img={zombieThumb}/>
+          <GameCard title="2048 AI" url="/aiProjects/2048/2048.html"
                   desc="AI I made to get as far as possible in 2048. I've seen it go pretty far." 
-                  year="Winter 2020" img={babelThumb}/>
-          <GameCard title="Pacman AI" url="pacman.html"
+                  year="Winter 2020" img={thumb2048}/>
+          <GameCard title="Pacman AI" url="/aiProjects/pacman/pacman.html"
                   desc="After a week or two of struggling on this one, I had a 2am epiphony
                         that I needed 'to make pacman act more like an octopus and less like a saucer' 
                         and it ended up getting me my final solution. I still see him goof
-                        up sometimes which is how I can tell it was a 2am solution." year="Winter 2020" img={babelThumb}/>
-          <GameCard title="Tic Tac Toe AI" url="tictactoe.html"
+                        up sometimes which is how I can tell it was a 2am solution." year="Winter 2020" img={pacmanThumb}/>
+          <GameCard title="Tic Tac Toe AI" url="/aiProjects/tictactoe/tictactoe.html"
                   desc="It's a tic tac toe AI squarring off against a rigorous set of tests but too fast
                   for you to know what's going on. At least I think that's what it's doing. It's been a while."
-                  year="Winter 2020" img={babelThumb}/>
+                  year="Winter 2020" img={toeThumb}/>
 
         </div>
     </div>

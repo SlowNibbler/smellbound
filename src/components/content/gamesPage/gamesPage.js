@@ -35,13 +35,11 @@ class GamesContainer extends Component{
                   link="https://www.youtube.com/watch?v=0SKqhOE_fUI&list=PLCDb_HDeMgcmPw-FmkKPAnWfwIG3MWpGJ&index=8&t=1s"
                   linkText="Big Iron - Marty Robins"/>
           <GameCard title="Town of Babel" url="https://townofbabel.github.io/" 
-                  desc="Hotline Miami x Rougelike but not that good. Shout out to TCSS 491 an Chris Marriott for gettin me into game dev.
-                  I did all the art an design and a fella by the name of Dylan Hill is 
-                  responsible for most all of the coding. He seems to have kept updating the 
-                  game and put a bunch of corny warnings when you start. I'm not affiliated with
-                  those." year="2020" img={babelThumb} linkText="Trailer" 
+                  desc="Hotline Miami but bad. First game I made. Did it for a college project with this dude
+                  Dylan Hill. I did all the art, was pretty fun. A game that begs the question of what if Lil Pump
+                  had to deal with a Tower of Babel type situation but somewhere in middle america and he also had
+                  to fight other rappers?? It's harder than Dark Souls 2." year="2020" img={babelThumb} linkText="Trailer" 
                   link="https://www.youtube.com/watch?v=ZmHowtpinvc"/>
-
         </div>
     </div>
     );

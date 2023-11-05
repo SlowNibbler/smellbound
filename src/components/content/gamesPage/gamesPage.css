@@ -5,8 +5,11 @@
     height: fit-content;
     overflow-y: auto;
     align-self: center;
-    margin: 0px -10px -10px -10px;
+    margin-top: 10px;
     max-height: 67vh;
+    border: 1px solid rgb(255, 242, 213);
+    border-radius: 10px;
+    overflow-x: auto;
 }
 
 .gameInfo {
@@ -38,6 +41,8 @@
     padding: 10px;
     margin: 10px 20px 10px 10px;
     display: flexbox;
+    border-radius: 10px;
+
 }
 
 .gameTitleandYear {
