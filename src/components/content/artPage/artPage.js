@@ -282,9 +282,7 @@ const ShadowMonkeyPa = new ImageObj(ShadowMonkey, null, 'painting', 'desc')
 class ArtContainer extends Component{
   render() {
     return(
-      <div>
-        <ArtContent/>
-      </div>
+      <ArtContent/>
     );
   }
 }

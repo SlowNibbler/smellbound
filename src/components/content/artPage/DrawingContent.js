@@ -85,17 +85,20 @@ const DrawingContent = ({ activeMedium }) => {
             </li>
           ))}
         </ul>
-        <div className="ImageGallery">
-          {activeContent.images.map((image, index) => (
-            <div key={index} className="image-container" onClick={() => openImageViewer(index)}>
-              <div className="image-info">
-                {image.name}
-                {image.text}
+        <div>
+          <div className="ImageGallery">
+            {activeContent.images.map((image, index) => (
+              <div key={index} className="image-container" onClick={() => openImageViewer(index)}>
+                <div className="image-info">
+                  {image.name}
+                  {image.text}
+                </div>
+                <Image image={image} index={index} nightmareEnabled={nightmareEnabled} />
               </div>
-              <Image image={image} index={index} nightmareEnabled={nightmareEnabled} />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        
         {viewerOpen && (
           <PictureShow
             images={activeContent.images}
