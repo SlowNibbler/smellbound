@@ -10,6 +10,7 @@
     border: 1px solid rgb(255, 242, 213);
     border-radius: 10px;
     overflow-x: auto;
+    max-width: -webkit-fill-available;
 }
 
 .gameInfo {
@@ -91,5 +92,26 @@
 }
 
 .gamerContent {
-    max-height: 85vh;
+    flex-direction: column;
+    display: flex;
 }
+
+@media (max-width: 768px) {
+    .games {
+        max-height: none;
+    }
+
+    .gameContent {
+        flex-flow: column;
+    }
+
+
+}
+
+@media (max-width: 460px) {
+    .gamePic {
+        max-width: 100%;
+    }
+}
+
+

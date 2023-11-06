@@ -24,7 +24,7 @@ div.Home {
 /* Media query for responsive layout */
 @media (max-width: 600px) {
 .HomeContentGrid {
-    grid-template-columns: 1fr; /* Switch to a single column layout */
+    grid-template-columns: minmax(0, 1fr); /* Switch to a single column layout */
 }
 }
 
@@ -35,6 +35,7 @@ div.Home {
     margin-top: 15px;
     background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
     display: grid;
+    overflow: auto;
 }
 
 .HomeGridItem img {

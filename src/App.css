@@ -14,19 +14,22 @@
 
 /* main content*/
 .ContentWrapper {
-  flex: 0 1 60%;
+  flex: 0 1 65%;
   backdrop-filter: blur(10px); /* Apply a blur effect to the background */
   padding: 15px; /* Add some padding to the content */
   transition: transform 1s ease; /* Add a smooth transition effect */
   margin-left: 10px;
   border: 2px solid rgb(255, 242, 213);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-  display: inline-block;
   background-color: rgba(0, 0, 0, 0.3);
   color: rgb(255, 242, 213);
   border-radius: 15px; /* Adjust the value to control the amount of rounding */
   z-index: 2;
-
+  max-height: 90%;
+  height: fit-content;
+  overflow: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -44,7 +47,7 @@
   flex-direction: row;
   align-items: normal;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 }
 
 #videoPlayer {
