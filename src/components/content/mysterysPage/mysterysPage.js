@@ -3,6 +3,7 @@ import { Component } from "react";
 import './mysterysPage.css';
 import { Provider, useSelector } from 'react-redux'
 
+import SorcererModel from '../homePage/models/SorcererModel'
 
 class MysterysPage extends Component{
   render() {
@@ -42,7 +43,7 @@ function MysteryContent() {
           </div>  
           <div className="HomeGridItem">
             here are three images
-            
+            <SorcererModel />
           </div>
         </div>
         <div className="Right">

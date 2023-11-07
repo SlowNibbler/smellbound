@@ -25,8 +25,10 @@ export default function PongoModel({ activeModel }) {
   // Change cursor on hover-state
   useEffect(() => void (document.body.style.cursor = hovered ? "pointer" : "auto"), [hovered])
   const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
+  
   // Change animation when the index changes
   useEffect(() => {
+
     if (nightmareEnabled) {
 
       // Reset and fade in animation after an index has been changed

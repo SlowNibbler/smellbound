@@ -1,6 +1,6 @@
 .App {
   display: block;
-  background-image: url(./images/homeImages/maskwall.png);
+  background-image: url(./images/homeImages/wall1.png);
   background-color: rgb(42, 140, 197);
   /* background-image: url('./images/homeImages/xiNice.jpg');  Replace with the actual path to your image */
   background-size: cover; /* Adjust the background size as needed */

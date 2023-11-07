@@ -1,29 +1,47 @@
-import React, { useEffect } from 'react';
-import moneky from '../../audio/JohnnyBGoode.mp3'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Johhny from '../../audio/JohnnyBGoode.mp3'
 
-const audio = new Audio(moneky);
+import { toggleNightmare } from './Quests/QuestSlice';
 
-function SoundComponent(){
-  useEffect(() => {
-    const handleNightmare = (event) => {
-      if (event.type === 'disableNightmare') {
-        // Disable Nightmare logic here
-        audio.pause();
-        console.log('monkey disabled');
-      } else if (event.type === 'enableNightmare') {
-        audio.play();
-        console.log('monkey enabled');
+
+// Create a Redux store with the reducer
+const { createStore } = require('redux');
+
+class SoundComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.audioRef = React.createRef();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.nightmareEnabled !== this.props.nightmareEnabled) {
+      if (this.props.nightmareEnabled) {
+        this.audioRef.current.play();
+      } else {
+        this.audioRef.current.pause();
       }
-    };
+    }
+  }
 
-    window.addEventListener('disableNightmare', handleNightmare);
-    window.addEventListener('enableNightmare', handleNightmare);
+  render() {
+    return (
+      <div>
 
-    return () => {
-      window.removeEventListener('disableNightmare', handleNightmare);
-      window.removeEventListener('enableNightmare', handleNightmare);
-    };
-  }, []);
+        <audio ref={this.audioRef}>
+          <source src={Johhny} type="audio/mpeg" />
+        </audio>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  nightmareEnabled: state.quest.nightmareEnabled, // Replace 'state.nightmareEnabled' with the correct path to your state value
+});
+
+const mapDispatchToProps = {
+  toggleNightmareEnabled: toggleNightmare,
 };
 
-export default SoundComponent;
+export default connect(mapStateToProps, mapDispatchToProps)(SoundComponent);

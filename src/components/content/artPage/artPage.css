@@ -283,6 +283,10 @@
     width: 50px;
   }
 
+  .Arrow:hover {
+    cursor: pointer;
+  }
+
 
   .artInfo {
     color: white;

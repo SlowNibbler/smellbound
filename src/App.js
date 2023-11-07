@@ -16,12 +16,12 @@ import { Sidebar, SidebarButton } from './components/sidebar/sidebar';
 import QuestStore from './components/state/Quests/QuestStore';
 import VideoSpawner from './components/utility/VideoSpawner';
 import InfiniteWebsiteScroll from './components/utility/InfiniteWebsiteScroll';
-
+import CaveSounds from './components/utility/caveSounds';
 
 function App() {
   return (
     <Provider store={QuestStore}>
-      <div className='App'>
+      <div className='App' id='App'>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -47,6 +47,7 @@ function Layout() {
       <Sidebar/>
       <ContentWrapper />
       <VideoSpawner videoSrc="/videos/keepSpinning.webm" nightmareEnabled={nightmareEnabled} />
+      <CaveSounds nightmareEnabled={nightmareEnabled} />
     </div>
   );
 }

@@ -7,6 +7,9 @@ div.Home {
     text-align: center;
 }
 
+.HomeTitle {
+    text-align: center;
+}
 
 
 .HomeContentGrid {
@@ -25,7 +28,7 @@ div.Home {
 @media (max-width: 600px) {
 .HomeContentGrid {
     grid-template-columns: minmax(0, 1fr); /* Switch to a single column layout */
-}
+    }
 }
 
 .HomeGridItem {
@@ -36,6 +39,7 @@ div.Home {
     background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
     display: grid;
     overflow: auto;
+    border-radius: 10px;
 }
 
 .HomeGridItem img {

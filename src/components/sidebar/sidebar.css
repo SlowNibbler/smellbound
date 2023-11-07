@@ -12,6 +12,8 @@
     display: inline-block;
     border-radius: 15px; /* Adjust the value to control the amount of rounding */
     height: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .Sidebar h2 {

@@ -22,7 +22,9 @@ const PictureShow = ({ images, currentIndex, closeViewer, nextImage, prevImage }
         <div className="close-button" onClick={closeViewer}>
           X
         </div>
+        <a href={image.image} target='_blank'>
           <img src={image.image} alt={image.name} />
+        </a>
         </div>
         {/* <div class="handle-right" onClick={nextImage}>
           <div class="arrow-right" />

@@ -4,7 +4,7 @@ import ModelViewer from './models/ModelViewer';
 import './homePage.css';
 import NightmareSwitch from "../../state/Nightmare/NightmareSwitch";
 import SoundComponent from "../../state/soundComponent";
-import Smellbound from "../../../images/homeImages/smelldev.png"
+import Smellbound from "../../../images/homeImages/QuatchBound.jpg"
 import { Provider, useSelector } from 'react-redux'
 
 
@@ -43,18 +43,20 @@ function HomeContent() {
             what is it
             restore internet harmony
             digital demogogue
-            https://en.wikipedia.org/wiki/Leader_of_the_Chinese_Communist_Party
           </div>  
-          <div className="HomeGridItem">
-            here are three images
-            
-          </div>
         </div>
         <div className="Right">
           <div className="HomeGridItem" id="ModelViewerHolder">
             <ModelViewer/>
           </div>
           <NightmareSwitch nightmareEnabled={nightmareEnabled} />
+          <div className="HomeGridItem">
+            Links
+            Code: GitHub
+            Games: itch.io
+            Business: Linkedin
+            Twitter: @SlowNibbler
+          </div>
           <SoundComponent />
         </div>
       </div>
