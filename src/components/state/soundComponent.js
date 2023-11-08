@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Johhny from '../../audio/JohnnyBGoode.mp3'
 
-import { toggleNightmare } from './Quests/QuestSlice';
+import { toggleBoogie } from './Quests/QuestSlice';
 
 
 // Create a Redux store with the reducer
@@ -15,8 +15,8 @@ class SoundComponent extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.nightmareEnabled !== this.props.nightmareEnabled) {
-      if (this.props.nightmareEnabled) {
+    if (prevProps.boogieEnabled !== this.props.boogieEnabled) {
+      if (this.props.boogieEnabled) {
         this.audioRef.current.play();
       } else {
         this.audioRef.current.pause();
@@ -37,11 +37,11 @@ class SoundComponent extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  nightmareEnabled: state.quest.nightmareEnabled, // Replace 'state.nightmareEnabled' with the correct path to your state value
+  boogieEnabled: state.quest.boogieEnabled, // Replace 'state.nightmareEnabled' with the correct path to your state value
 });
 
 const mapDispatchToProps = {
-  toggleNightmareEnabled: toggleNightmare,
+  toggleBoogieEnabled: toggleBoogie,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SoundComponent);

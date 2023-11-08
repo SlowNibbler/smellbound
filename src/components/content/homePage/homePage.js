@@ -2,7 +2,7 @@ import { Component } from "react";
 import ModelViewer from './models/ModelViewer';
 
 import './homePage.css';
-import NightmareSwitch from "../../state/Nightmare/NightmareSwitch";
+import BoogieSwitch from "../../state/Nightmare/BoogieSwitch";
 import SoundComponent from "../../state/soundComponent";
 import Smellbound from "../../../images/homeImages/QuatchBound.jpg"
 import { Provider, useSelector } from 'react-redux'
@@ -17,7 +17,7 @@ class HomePage extends Component{
 }
 
 function HomeContent() {
-  const nightmareEnabled = useSelector(state => state.nightmareEnabled)
+  const boogieEnabled = useSelector(state => state.boogieEnabled)
 
   return (
     <div className="HomeContent">
@@ -26,10 +26,7 @@ function HomeContent() {
       
       <div className="HomeContentGrid">
         <div className="Left">
-          <div className="HomeGridItem">
-            <img src={Smellbound} alt="Smellbound" className="Smellbound"/>
-          </div>
-          <div className="HomeGridItem">
+        <div className="HomeGridItem">
             where am it
             property of James McHugh
             good internet
@@ -40,6 +37,10 @@ function HomeContent() {
 
           </div>  
           <div className="HomeGridItem">
+            <img src={Smellbound} alt="Smellbound" className="Smellbound"/>
+          </div>
+          
+          <div className="HomeGridItem">
             what is it
             restore internet harmony
             digital demogogue
@@ -49,14 +50,23 @@ function HomeContent() {
           <div className="HomeGridItem" id="ModelViewerHolder">
             <ModelViewer/>
           </div>
-          <NightmareSwitch nightmareEnabled={nightmareEnabled} />
           <div className="HomeGridItem">
-            Links
-            Code: GitHub
-            Games: itch.io
-            Business: Linkedin
-            Twitter: @SlowNibbler
+            <div className="HomeLinks">
+              <h3>Links</h3>
+              <text>Code: </text>
+              <a href="https://github.com/SlowNibbler" target="_blank">Github</a> <br/>
+              <text>Games: </text>
+              <a href="https://slownibbler.itch.io/" target="_blank">itch.io</a> <br/>
+              <text>Movies: </text>
+              <a href="https://letterboxd.com/TheWumboMan/" target="_blank">Letterboxd</a> <br/>
+              {/* <text>Twitter: </text>
+              <a href="" target="_blank">Twitter</a>  */}
+              <text>Business: </text>
+              <a href="https://www.linkedin.com/in/james-mchugh-a8297b163/" target="_blank">Linkedin</a> 
+            </div>
           </div>
+          <BoogieSwitch boo={boogieEnabled} />
+
           <SoundComponent />
         </div>
       </div>

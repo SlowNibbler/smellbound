@@ -9,7 +9,7 @@ import { useEffect, useState, useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 import { useGLTF, useTexture, useAnimations, useFBX, OrbitControls } from "@react-three/drei"
 import { FBXLoader, MeshBasicMaterial, Texture } from "three";
-import { selectNightmareEnabled } from '../../../state/Quests/QuestSlice';
+import { selectNightmareEnabled, selectBoogieEnabled } from '../../../state/Quests/QuestSlice';
 import { Provider, useSelector } from 'react-redux'
 
 
@@ -24,12 +24,12 @@ export default function PongoModel({ activeModel }) {
 
   // Change cursor on hover-state
   useEffect(() => void (document.body.style.cursor = hovered ? "pointer" : "auto"), [hovered])
-  const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
+  const boogieEnabled = useSelector((state)=>state.quest.boogieEnabled)
   
   // Change animation when the index changes
   useEffect(() => {
 
-    if (nightmareEnabled) {
+    if (boogieEnabled) {
 
       // Reset and fade in animation after an index has been changed
       actions[names[0]].play()

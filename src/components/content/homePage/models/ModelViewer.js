@@ -21,11 +21,18 @@ let boogieSwitch = false
 
 export default function ModelViewer() {
 
-  const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
+  const nightmareEnabled = useSelector((state)=>state.quest.boogieEnabled)
 
   const models = [
     {
-      name: 'Jim',
+      name: 'Tumbo',
+      model: TumboModel,
+      scale: [20, 20, 20],
+      rotation: [-.2, .1, 0],
+      position: [0, 2, 0]
+    },
+    {
+      name: 'Me',
       model: JimModel,
       scale: [7, 7, 7],
       rotation: [0, .1, 0],
@@ -35,12 +42,6 @@ export default function ModelViewer() {
       name: 'Pongo',
       model: PongoModel,
       position: [0, 0, 0]
-    },
-    {
-      name: 'Tumbo',
-      model: TumboModel,
-      scale: [20, 20, 20],
-      position: [0, 2, 0]
     },
     {
       name: 'El Jefe',

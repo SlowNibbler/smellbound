@@ -18,28 +18,40 @@ import VideoSpawner from './components/utility/VideoSpawner';
 import InfiniteWebsiteScroll from './components/utility/InfiniteWebsiteScroll';
 import CaveSounds from './components/utility/caveSounds';
 
+
+
+
 function App() {
+
   return (
     <Provider store={QuestStore}>
-      <div className='App' id='App'>
+      <Appo/>
+    </Provider>
+  );
+}
+
+function Appo() {
+  const selectedImage = useSelector((state) => state.quest.selectedImage);
+  return (
+      <div className='App' id='App' style={{ backgroundImage: `url(${selectedImage})` }}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="art" element={<ArtContainer />} />
             <Route path="games" element={<GamesContainer />} />
             <Route path="code" element={<CodeContainer />} />
-            <Route path="mysterys" element={<MysterysContainer />} />
+            <Route path="mystery" element={<MysterysContainer />} />
           </Route>
         </Routes>
       </div>
-    </Provider>
   );
 }
 
 
 
 function Layout() {
-  const nightmareEnabled = useSelector(state => state.nightmareEnabled)
+  const nightmareEnabled = useSelector(state => state.quest.nightmareEnabled)
+  const caveEnabled = useSelector(state => state.quest.caveEnabled)
 
   return (
     <div className='Layout' >
@@ -47,7 +59,7 @@ function Layout() {
       <Sidebar/>
       <ContentWrapper />
       <VideoSpawner videoSrc="/videos/keepSpinning.webm" nightmareEnabled={nightmareEnabled} />
-      <CaveSounds nightmareEnabled={nightmareEnabled} />
+      <CaveSounds nightmareEnabled={nightmareEnabled} caveEnabled={caveEnabled}/>
     </div>
   );
 }

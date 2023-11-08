@@ -25,6 +25,8 @@
     padding-top: .1em;
     padding-bottom: .1em;
     margin-bottom: -1px;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+
 }
 
 .MediumListItem:first-of-type {
@@ -57,6 +59,8 @@
     padding-right: .4em;   
     padding-top: .1em;
     padding-bottom: .1em;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+
 }
 
 .SubListItem:last-of-type {
@@ -80,7 +84,9 @@
     gap: 15px; /* Adjust the gap as needed */
     overflow: auto; /* Enable vertical scrolling when content exceeds the maximum height */
     max-height: 67vh; /* Set your desired maximum height */
-    border-radius: 0px 10px 10px 10px
+    border-radius: 0px 10px 10px 10px;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+
 }
 
 /* Media query for 700px and above */
@@ -114,6 +120,7 @@
     aspect-ratio: 1/1;   
     display: inline-block;
     position: relative; /* Needed for the link */
+    border: 1px solid rgb(255, 242, 213);
 
 }
 
@@ -243,6 +250,14 @@
     box-shadow: 0 0 10px rgba(237, 237, 237, 0.9);
     object-fit: contain; /* Ensure the image maintains its aspect ratio and fits completely within the container */
   }
+
+  .image-container-big a {
+    width: 100%; /* Set the maximum width of the image to 100% of the container width */
+    height: 100%; 
+    display: contents;
+    align-content: center;
+  }
+
   
   /* Style for the navigation buttons */
 
@@ -294,6 +309,8 @@
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+
 }
 
 .artInfo h1 {

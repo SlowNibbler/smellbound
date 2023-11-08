@@ -29,7 +29,7 @@ class Sidebar extends Component{
           <SidebarElement id = 'artIcon' name = 'Art' image = {cube} imageHover = {cubeHover} link = 'art'/>
           <SidebarElement id = 'gamesIcon' name = 'Games' image = {tri} imageHover = {triHover} link = 'games'/>
           <SidebarElement id = 'codeIcon' name = 'Code' image = {prism} imageHover = {prismHover} link = 'code'/>
-          <SidebarElement id = 'mysterysIcon' name = 'Mysterys' image = {oval} imageHover = {ovalHover} link = 'mysterys'/>
+          <SidebarElement id = 'mysterysIcon' name = 'Mystery' image = {oval} imageHover = {ovalHover} link = 'mystery'/>
         </ul>
       </div>
     );

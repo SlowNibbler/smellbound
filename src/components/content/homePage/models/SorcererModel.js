@@ -4,8 +4,12 @@ import SorcererGif from '../../../../images/homeImages/sorcerer/00011.gif'
 
 import React, { useState, useEffect } from 'react';
 
+import '../../mysterysPage/mysterysPage.css'
+
 const SorcererModel = () => {
   const [isSpeaking, setSpeaking] = useState(false);
+  const [hasSpoken, setSpoken] = useState(false);
+
   const [displayText, setDisplayText] = useState('');
   const [randomWebsite, setRandomWebsite] = useState('');
   const [isRegenerateVisible, setRegenerateVisible] = useState(false);
@@ -19,15 +23,22 @@ const SorcererModel = () => {
   ];
 
   useEffect(() => {
+    console.log(isSpeaking || hasSpoken)
     if (isSpeaking) {
       // Simulate a delay for the animation
       setTimeout(() => {
         setDisplayText(getRandomWebsite());
         setRegenerateVisible(true);
-      }, 3000);
+        setSpoken(true)
+        console.log('timeotu')
+        setSpeaking(false)
+      }, 4000);
     } else {
-      setDisplayText(''); // Reset the text
       setRegenerateVisible(false);
+      console.log('else')
+      setSpeaking(false)
+
+
     }
   }, [isSpeaking]);
 
@@ -38,25 +49,24 @@ const SorcererModel = () => {
 
   const handleSpeakClick = () => {
     setSpeaking(true);
+    setSpoken(false)
   };
 
-  const handleRegenerateClick = () => {
-    setDisplayText(getRandomWebsite());
-  };
+  
 
-  const handleGifAnimationEnd = () => {
-    setGifAnimationEnded(true);
-  };
+
 
   return (
     <div className="sorcerer-model">
       <img
         src={isSpeaking ? SorcererGif : SorcererImg}
         alt="Sorcerer"
-        onAnimationEnd={handleGifAnimationEnd}
       />
-      <div className="dialog">
-        {initialButtonClicked ? (
+        {!isSpeaking ? (<button className="sorcerer-button" onClick={handleSpeakClick}>Speak to Sorcerer</button>) : null}
+
+        {(hasSpoken) ? (<a className="animated-text" href={displayText} target='_blank' ><Typewriter text={displayText} delay={50} /></a>) : null}
+
+        {/* {initialButtonClicked ? (
           gifAnimationEnded ? (
             isSpeaking ? (
               <div className="animated-text">{displayText}</div>
@@ -69,10 +79,28 @@ const SorcererModel = () => {
         )}
         {isRegenerateVisible && (
           <button onClick={handleRegenerateClick}>Regenerate</button>
-        )}
-      </div>
+        )} */}
     </div>
   );
 };
+
+
+const Typewriter = ({ text, delay }) => {
+    const [currentText, setCurrentText] = useState('');
+    const [currentIndex, setCurrentIndex] = useState(0);
+  
+    useEffect(() => {
+        if (currentIndex < text.length) {
+          const timeout = setTimeout(() => {
+            setCurrentText(prevText => prevText + text[currentIndex]);
+            setCurrentIndex(prevIndex => prevIndex + 1);
+          }, delay);
+      
+          return () => clearTimeout(timeout);
+        }
+      }, [currentIndex, delay, text]);
+  
+    return <span>{currentText}</span>;
+  };
 
 export default SorcererModel;

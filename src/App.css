@@ -18,7 +18,7 @@
   backdrop-filter: blur(10px); /* Apply a blur effect to the background */
   padding: 15px; /* Add some padding to the content */
   transition: transform 1s ease; /* Add a smooth transition effect */
-  margin-left: 10px;
+  margin-left: 15px;
   border: 2px solid rgb(255, 242, 213);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   background-color: rgba(0, 0, 0, 0.3);
@@ -28,7 +28,7 @@
   max-height: 90%;
   height: fit-content;
   overflow: auto;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 

@@ -5,6 +5,14 @@ import { Provider, useSelector } from 'react-redux'
 
 import SorcererModel from '../homePage/models/SorcererModel'
 
+import ThemeSelect from "./ThemeSelect";
+
+import NightmareSwitch from '../../state/Nightmare/NightmareSwitch'
+import CaveSwitch from "../../state/Nightmare/CaveSwitch";
+import FreeImage from './FreeImage'
+
+
+
 class MysterysPage extends Component{
   render() {
     return(
@@ -18,36 +26,29 @@ function MysteryContent() {
 
   return (
     <div className="HomeContent">
-      <div className="SmellTitle">Smellbound</div>
-      <OpeningQuote />
+      <div className="SmellTitle">Mysteries</div>
       
       <div className="HomeContentGrid">
         <div className="Left">
           <div className="HomeGridItem">
+            <FreeImage/>
           </div>
           <div className="HomeGridItem">
-            where am it
-            property of James McHugh
-            good internet
-            welcome to the gallery of smellbound. Collection of hand-crafted smell based artforms. avant garde stench
-            french delerium
-            parts of smellbound came out of a test tube
+            <h3 className="headder">
+              Themes
+            </h3>
+           <ThemeSelect/>
             
 
           </div>  
-          <div className="HomeGridItem">
-            what is it
-            restore internet harmony
-            digital demogogue
-            https://en.wikipedia.org/wiki/Leader_of_the_Chinese_Communist_Party
-          </div>  
-          <div className="HomeGridItem">
-            here are three images
-            <SorcererModel />
-          </div>
+          <CaveSwitch/>
+          
         </div>
         <div className="Right">
-
+          <div className="HomeGridItem">
+            <SorcererModel />
+          </div>
+          <NightmareSwitch/>
         </div>
       </div>
     </div>

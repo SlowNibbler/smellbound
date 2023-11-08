@@ -12,19 +12,21 @@ import pnngg from '../../images/homeImages/wall1.png'
 const CaveSounds = () => {
     const dispatch = useDispatch();
     const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
+    const caveEnabled = useSelector((state)=>state.quest.caveEnabled)
     const [backgroundImage, setBackgroundImage] = useState(pnngg);
   
+    //console.log('fdsfsdfsffffff' + caveEnabled)
+
     useEffect(() => {
       let soundInterval;
-        console.log('nifds' + nightmareEnabled)
-      if (nightmareEnabled) {
+      if (nightmareEnabled && caveEnabled) {
 
         soundInterval = setInterval(() => {
           const randomSound = JohnnyBGood;//caveSounds[Math.floor(Math.random() * caveSounds.length)];
           const gifImage = giff; // Replace with the actual GIF file
 
           setBackgroundImage(gifImage);
-          console.log('playy')
+          console.log('caveSound' + caveEnabled)
 
           const audio = new Audio(randomSound);
           audio.play();
@@ -38,7 +40,7 @@ const CaveSounds = () => {
       return () => {
         if (soundInterval) clearInterval(soundInterval);
       };
-    }, [nightmareEnabled]);
+    }, [nightmareEnabled, caveEnabled]);
   
     return (
       <div className="cave-sounds" style={{ backgroundImage: `url(${backgroundImage})` }}>
