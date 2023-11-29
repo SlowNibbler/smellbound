@@ -43,7 +43,7 @@ const SculptingContent = ({ activeMedium }) => {
       return (
         <div className="ScultpoWrap" key={index}>
           <div className="image-info">
-            {activeModel.name}
+            {activeModel.name}<br/>
             {activeModel.text}
           </div>
           <Canvas className="ModelViewer" shadows camera={{ position: [2, 0, 4.5], fov: 50 }}>
@@ -60,7 +60,7 @@ const SculptingContent = ({ activeMedium }) => {
       return (
         <div className="ScultpoWrap" key={index}>
           <div className="image-info">
-            {activeModel.name}
+            {activeModel.name}<br/>
             {activeModel.text}
           </div>
           <Canvas className="ModelViewer" shadows camera={{ position: [2, 0, 4.5], fov: 50 }}>

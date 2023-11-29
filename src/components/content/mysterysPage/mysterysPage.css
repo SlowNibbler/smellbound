@@ -47,7 +47,9 @@ button {
 }
 
 
-
+.CaveSwitch {
+    margin-top: 10px;
+}
 
 .sorcerer-model {
     display: flex;

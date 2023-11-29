@@ -151,128 +151,127 @@ class ModelObj {
 
 // Sculptures
 const TumboObj = new ModelObj('Tumbo', Tumbo, [20, 20, 20]);
-const TumboMdl = new ImageObj(Tumbo, null, 'Tumbo', 'Look at Tumbo!', TumboObj);
+const TumboMdl = new ImageObj(Tumbo, null, 'Tumbo', 'It\'s Tumbo!', TumboObj);
 const PagliombroObj = new ModelObj('Pagliombro', Pagliombro, [20, 20, 20]);
 const PagliombroMdl = new ImageObj(Pagliombro, null, 'Pagliombro', 'Look at Pagliombro!', PagliombroObj);
 const ScrimbloObj = new ModelObj('Scrimblo', Scrimblo, [20, 20, 20], [0, 0, 0], [0, 0,Math.PI]);
-const ScrimbloMdl = new ImageObj(Scrimblo, null, 'Scrimblo', 'Look at Scrimblo!', ScrimbloObj);
+const ScrimbloMdl = new ImageObj(Scrimblo, null, 'Scrimblo', 'Scrimblo\s here!', ScrimbloObj);
 const KvagnerObj = new ModelObj('Kvagner', Kvagner, [20, 20, 20]);
-const KvagnerMdl = new ImageObj(Kvagner, null, 'Kvagner', 'Look at Kvagner!', KvagnerObj);
+const KvagnerMdl = new ImageObj(Kvagner, null, 'Foxwood', 'Foxwood\'s at it again!', KvagnerObj);
 const ShumashObj = new ModelObj('Shumash', Shumash, [20, 20, 20]);
-const ShumashMdl = new ImageObj(Shumash, null, 'Shumash', 'Look at Shumash!', ShumashObj);
+const ShumashMdl = new ImageObj(Shumash, null, 'Shumash', 'What\'s Shumash doing here!', ShumashObj);
 const TrungusObj = new ModelObj('Trungus', Trungus, [50, 50, 50], [0, -2, 0]);
-const TrungusMdl = new ImageObj(Trungus, null, 'Trungus', 'Look at Trungus!', TrungusObj);
+const TrungusMdl = new ImageObj(Trungus, null, 'Trungus', 'Trugus is back on the scene!', TrungusObj);
 const ElJefeObj = new ModelObj('ElJefe', ElJefe, [35, 35, 35], [0, -2, 0]);
-const ElJefeMdl = new ImageObj(ElJefe, null, 'ElJefe', 'Look at ElJefe!', ElJefeObj);
+const ElJefeMdl = new ImageObj(ElJefe, null, 'El Jefe', 'This guy\'s clearly the one in charge around here.', ElJefeObj);
 
 // Models
 const LegsOj = new ModelObj('Legs', Legs, [.05, .05, .05], [0, 0, 0]);
 const LegsAltOj = new ModelObj('Legs', LegsAlt, [.05, .05, .05], [0, 0, 0]);
-
-const LegsMdl = new ImageObj(Legs, LegsAltOj, 'ElJefe', 'Look at ElJefe!', LegsOj);
+const LegsMdl = new ImageObj(Legs, LegsAltOj, '40 Legs', 'idk it\'s just 40 legs', LegsOj);
 const CrabOj = new ModelObj('Crab', Crab, [.02, .02, .02], [0, 0, 0]);
-const CrabMdl = new ImageObj(Crab, null, 'ElJefe', 'Look at ElJefe!', CrabOj);
+const CrabMdl = new ImageObj(Crab, null, 'Crab', 'default_enemy.fbx', CrabOj);
 
 // Photoshop
-const BloobornePs = new ImageObj(PsBloodborne, null, 'Blugerborne', 'its gamieng')
-const EldenShrekPs = new ImageObj(PsErShrek, PsErShreakAlt, 'Zweihander Beach', 'its gamieng')
-const BlueDemonPs = new ImageObj(PsBlueDemon, null, 'Demonio de Azule practice', 'its gamieng')
-const JojoBogsPs = new ImageObj(PsBog, null, 'bogged', 'its gamieng')
-const ChimpPs = new ImageObj(PsChimp, null, 'The Yankees', 'its gamieng')
-const StrahdLadsPs = new ImageObj(PsStrahd, null, 'blorrborne', 'its gamieng')
-const HandsPs = new ImageObj(PsHands, null, 'blorrborne', 'its gamieng')
-const GreekBogPs = new ImageObj(PsBogGreek, null, 'blorrborne', 'its gamieng')
-const JebPs = new ImageObj(PsJeb, null, 'Jeb!', 'its gamieng')
-const MustangPs = new ImageObj(PsMustang, null, 'blorrborne', 'its gamieng')
-const CowboyPs = new ImageObj(PsCowbout, null, 'blorrborne', 'its gamieng')
-const PongoPs = new ImageObj(PsPongo, PsPongoB, 'blorrborne', 'its gamieng')
-const ToshiroPs = new ImageObj(PsToshiro, null, 'blorrborne', 'its gamieng')
+const BloobornePs = new ImageObj(PsBloodborne, null, 'Blugerborne', 'its gamieng, gotta love it')
+const EldenShrekPs = new ImageObj(PsErShrek, PsErShreakAlt, 'Shrek in Thought', 'Getting the zweihander on that beach was the best part of Elden Ring')
+const BlueDemonPs = new ImageObj(PsBlueDemon, null, 'Demonio de Azule - practice', 'Wrestling peaked in 60\'s lucha imo')
+const JojoBogsPs = new ImageObj(PsBog, null, 'The Call', 'Igor and Grishka probably still live on within cellphones')
+const ChimpPs = new ImageObj(PsChimp, null, 'Chimp on Top', 'This is what the Yankees wish they were')
+const StrahdLadsPs = new ImageObj(PsStrahd, null, 'Strahd Lads', 'On their way to Bonegrinder')
+const HandsPs = new ImageObj(PsHands, null, 'Hands on Rye', 'Whole lotta fingers')
+const GreekBogPs = new ImageObj(PsBogGreek, null, 'The Philosophers Bogdanoff', 'The kinda stuff the feds don\'t want you to see')
+const JebPs = new ImageObj(PsJeb, null, 'Jeb!', 'Elected sheriff of Florida')
+const MustangPs = new ImageObj(PsMustang, null, 'Remember Drive?', 'cool movie')
+const CowboyPs = new ImageObj(PsCowbout, null, 'Digital Cowboy', 'even cowboys has email')
+const PongoPs = new ImageObj(PsPongo, PsPongoB, 'Guerilla Pongo', 'Pongo is coolest when he\'s some kind of contra in South America')
+const ToshiroPs = new ImageObj(PsToshiro, null, 'Toshiro', 'Yojimbo is still goated')
 
 
 // Sketchbook
-const OfficeDr = new ImageObj(Office, null, 'blorrborne', 'its gamieng')
-const BeastDr = new ImageObj(Beast, null, 'blorrborne', 'its gamieng')
-const BogJojoDr = new ImageObj(BogJojo, null, 'blorrborne', 'its gamieng')
-const BogPracDr = new ImageObj(BogPrac, null, 'blorrborne', 'its gamieng')
-const BoogerDr = new ImageObj(Booger, null, 'blorrborne', 'its gamieng')
-const BugDr = new ImageObj(Bug, null, 'blorrborne', 'its gamieng')
-const CafeDr = new ImageObj(Cafe, null, 'blorrborne', 'its gamieng')
-const DeepWoodsDr = new ImageObj(DeepWoods, null, 'blorrborne', 'its gamieng')
-const DonaldDr = new ImageObj(Donald, null, 'blorrborne', 'its gamieng')
-const DrugsDr = new ImageObj(Drugs, null, 'blorrborne', 'its gamieng')
-const GoblinoDr = new ImageObj(Goblino, null, 'blorrborne', 'its gamieng')
-const GoblinosDr = new ImageObj(Goblinos, null, 'blorrborne', 'its gamieng')
-const EyesightDr = new ImageObj(Eyesight, null, 'blorrborne', 'its gamieng')
-const FishWarDr = new ImageObj(FishWar, null, 'blorrborne', 'its gamieng')
-const WebDr = new ImageObj(Web, null, 'blorrborne', 'its gamieng')
-const FunkGoblinDr = new ImageObj(FunkGoblin, null, 'blorrborne', 'its gamieng')
-const GoblinFollyDr = new ImageObj(GoblinFolly, null, 'blorrborne', 'its gamieng')
-const GreenTotemDr = new ImageObj(GreenTotem, null, 'blorrborne', 'its gamieng')
-const HankPracDr = new ImageObj(HankPrac, null, 'blorrborne', 'its gamieng')
-const IdkDr = new ImageObj(Idk, null, 'blorrborne', 'its gamieng')
-const IncinDr = new ImageObj(Incin, null, 'blorrborne', 'its gamieng')
-const KingEmailDr = new ImageObj(KingEmail, null, 'blorrborne', 'its gamieng')
-const KKDr = new ImageObj(KK, null, 'blorrborne', 'its gamieng')
-const KnightDr = new ImageObj(Knight, null, 'blorrborne', 'its gamieng')
-const ScreensDr = new ImageObj(Screens, null, 'blorrborne', 'its gamieng')
-const IslandsDr = new ImageObj(Islands, null, 'blorrborne', 'its gamieng')
-const MessKidDr = new ImageObj(MessKid, null, 'blorrborne', 'its gamieng')
-const NakesDr = new ImageObj(Nakes, null, 'blorrborne', 'its gamieng')
-const NastyDr = new ImageObj(Nasty, null, 'blorrborne', 'its gamieng')
-const NewShapeDr = new ImageObj(NewShape, NewShapeAlt, 'blorrborne', 'its gamieng')
-const OldGutsDr = new ImageObj(OldGuts, null, 'blorrborne', 'its gamieng')
-const PadGutsDr = new ImageObj(PadGuts, null, 'blorrborne', 'its gamieng')
-const PunishedHankDr = new ImageObj(PunishedHank, null, 'blorrborne', 'its gamieng')
-const QuatchDr = new ImageObj(Quatch, QuatchAlt, 'blorrborne', 'its gamieng')
-const ShumashDr = new ImageObj(Shumashh, null, 'blorrborne', 'its gamieng')
-const SmilesDr = new ImageObj(Smiles, null, 'blorrborne', 'its gamieng')
-const SmokeDr = new ImageObj(Smoke, null, 'blorrborne', 'its gamieng')
+const OfficeDr = new ImageObj(Office, null, 'Office', 'its office')
+const BeastDr = new ImageObj(Beast, null, 'Reagan', 'War is smell')
+const BogJojoDr = new ImageObj(BogJojo, null, 'Igor Kujo', 'The French figured out stands a long time ago')
+const BogPracDr = new ImageObj(BogPrac, null, 'Whole Lotta Bog', 'Practice')
+const BoogerDr = new ImageObj(Booger, null, 'Booger Like Snot', null)
+const BugDr = new ImageObj(Bug, null, 'Bug Kid', 'somethin kinda stinky')
+const CafeDr = new ImageObj(Cafe, null, 'Metro Cafe', 'thank god for cafes on rainy afternoons')
+const DeepWoodsDr = new ImageObj(DeepWoods, null, 'Deep Woods', 'Buncha hullabaloo')
+const DonaldDr = new ImageObj(Donald, null, 'Dragonslayer Donald', 'Trump was in Dark Souls 2 actually')
+const DrugsDr = new ImageObj(Drugs, null, 'Mungos Mess', null)
+const GoblinoDr = new ImageObj(Goblino, null, 'Goblino', 'These guy\'s are great')
+const GoblinosDr = new ImageObj(Goblinos, null, 'Stinky Lil Weirdos', null)
+const EyesightDr = new ImageObj(Eyesight, null, 'Foresight 20/20', null)
+const FishWarDr = new ImageObj(FishWar, null, 'Trout', 'WW3 will be fought at sea')
+const WebDr = new ImageObj(Web, null, 'Websites', 'Crazy how the computer keeps getting worse')
+const FunkGoblinDr = new ImageObj(FunkGoblin, null, 'Funky Kinda Goblin', null)
+const GoblinFollyDr = new ImageObj(GoblinFolly, null, 'Goblins Folly', 'Player characters should just look like this')
+const GreenTotemDr = new ImageObj(GreenTotem, null, 'Green Totem', 'Green Totem being a cactus was Sashas best idea')
+const HankPracDr = new ImageObj(HankPrac, null, 'Hank Hill', 'Hank lived many lives')
+const IdkDr = new ImageObj(Idk, null, 'Egypt 2055', null)
+const IncinDr = new ImageObj(Incin, null, 'Inciniroar', 'Dude has the best side B of all time')
+const KingEmailDr = new ImageObj(KingEmail, null, 'The Kings Email', 'Imagine if King George had a gmail that\'d be so cool')
+const KKDr = new ImageObj(KK, null, 'K.K. Slider', 'Unironically the best video game character of all time')
+const KnightDr = new ImageObj(Knight, null, 'Joan d\'Arc', null)
+const ScreensDr = new ImageObj(Screens, null, 'Whole lotta screens', 'its gamieng')
+const IslandsDr = new ImageObj(Islands, null, 'Pocket Islands', 'Used to draw these all the time on bookmarks as a kid')
+const MessKidDr = new ImageObj(MessKid, null, 'Messy Kid!', 'He\' messy!')
+const NakesDr = new ImageObj(Nakes, null, 'Gargomel', 'Cruisin in a new lambo')
+const NastyDr = new ImageObj(Nasty, null, 'Nasty lil Face', null)
+const NewShapeDr = new ImageObj(NewShape, NewShapeAlt, 'New Shape Just Dropped', 'An the fellas gotta check it out')
+const OldGutsDr = new ImageObj(OldGuts, null, 'Guts', 'but what if he old')
+const PadGutsDr = new ImageObj(PadGuts, null, 'Paddington', 'but what if he Guts')
+const PunishedHankDr = new ImageObj(PunishedHank, null, 'Punished Hank', 'Diamond Dog only use propane')
+const QuatchDr = new ImageObj(Quatch, QuatchAlt, 'Quatch', 'Saw this guy near Mt. Baker, surpisingly funny')
+const ShumashDr = new ImageObj(Shumashh, null, 'Shumash', 'Thinkin bout Sumerian gods again')
+const SmilesDr = new ImageObj(Smiles, null, 'All Smiles', null)
+const SmokeDr = new ImageObj(Smoke, null, 'Smoke', null)
 const SillyDr = new ImageObj(Silly, null, 'blorrborne', 'its gamieng')
-const SomethingDr = new ImageObj(Something, null, 'blorrborne', 'its gamieng')
+const SomethingDr = new ImageObj(Something, null, 'Undefined', 'sometimes you just gotta draw a cool skull guy')
 const CodingDr = new ImageObj(Coding, null, 'blorrborne', 'its gamieng')
-const GovDr = new ImageObj(Gov, null, 'blorrborne', 'its gamieng')
-const TrailerDr = new ImageObj(Trailer, null, 'blorrborne', 'its gamieng')
-const TravelerDr = new ImageObj(Traveler, null, 'blorrborne', 'its gamieng')
-const WakeDr = new ImageObj(Wake, null, 'blorrborne', 'its gamieng')
-const YojimboDr = new ImageObj(Yojimbo, null, 'blorrborne', 'its gamieng')
+const GovDr = new ImageObj(Gov, null, 'Local Politics', 'Funniest sitcom characters imaginable')
+const TrailerDr = new ImageObj(Trailer, null, 'Trailer Park Guardian', null)
+const TravelerDr = new ImageObj(Traveler, null, 'Traveler', null)
+const WakeDr = new ImageObj(Wake, null, 'Sleep', 'Computers don\'t really know about sleep')
+const YojimboDr = new ImageObj(Yojimbo, null, 'Big Grin', null)
 
 
 
 // Sketchbook 3
-const FragileDr = new ImageObj(Fragile, FragileAlt, 'blorrborne', 'its gamieng')
-const DragonDr = new ImageObj(Dragon, DragonAlt, 'blorrborne', 'its gamieng')
-const WildDr = new ImageObj(Wild, WildAlt, 'Wild', 'its gamieng')
-const DizzynDr = new ImageObj(Dizzy, DizzyAlt, 'Dizzy', 'its gamieng')
-const EdDr = new ImageObj(Ed, EdAlt, 'blorrborne', 'its gamieng')
-const FunnyBotDr = new ImageObj(FunnyBot, FunnyBotAlt, 'blorrborne', 'its gamieng')
-const RobotsDr = new ImageObj(Robots, RobotsAlt, 'blorrborne', 'its gamieng')
+const FragileDr = new ImageObj(Fragile, FragileAlt, 'Fragile', 'Inktober #8')
+const DragonDr = new ImageObj(Dragon, DragonAlt, 'Dragon', 'Inktober #12')
+const WildDr = new ImageObj(Wild, WildAlt, 'Wild', 'Inktober #16')
+const DizzynDr = new ImageObj(Dizzy, DizzyAlt, 'Dizzy & Tasty', 'Inktober #24 & #25')
+const EdDr = new ImageObj(Ed, EdAlt, 'Monkey & Harris', 'Dastardly Duo')
+const FunnyBotDr = new ImageObj(FunnyBot, FunnyBotAlt, 'Robobot?', 'This is going to be Drake in 60 years')
+const RobotsDr = new ImageObj(Robots, RobotsAlt, 'Groovy', 'Robot wearing jacker > all other designs')
 
 // Crayon
 
 
-const DuxiuCr = new ImageObj(Duxiu, null, 'blorrborne', 'its gamieng')
-const ZhonfaCr = new ImageObj(Zhonfa, null, 'blorrborne', 'its gamieng')
-const GuCr = new ImageObj(Gu, null, 'blorrborne', 'its gamieng')
-const AlienCr = new ImageObj(Alien, null, 'blorrborne', 'its gamieng')
-const BaronCr = new ImageObj(Baron, BaronAlt, 'blorrborne', 'its gamieng')
-const MartyCr = new ImageObj(Marty, null, 'blorrborne', 'its gamieng')
-const GekCr = new ImageObj(Gek, null, 'blorrborne', 'its gamieng')
-const GilgameshCr = new ImageObj(Gilgamesh, null, 'blorrborne', 'its gamieng')
-const GrassKnightCr = new ImageObj(GrassKnight, null, 'blorrborne', 'its gamieng')
-const JintaoCr = new ImageObj(Jintao, null, 'blorrborne', 'its gamieng')
-const NightBeachCr = new ImageObj(NightBeach, null, 'blorrborne', 'its gamieng')
-const ShapeHillsCr = new ImageObj(ShapeHills, null, 'blorrborne', 'its gamieng')
-const SleeperCr = new ImageObj(Sleeper, null, 'blorrborne', 'its gamieng')
-const SpelboCr = new ImageObj(Spelbo, null, 'blorrborne', 'its gamieng')
+const DuxiuCr = new ImageObj(Duxiu, null, 'Duxiu', '#1')
+const ZhonfaCr = new ImageObj(Zhonfa, null, 'Zhonfa', '#2')
+const GuCr = new ImageObj(Gu, null, 'Gu', '#3')
+const AlienCr = new ImageObj(Alien, null, 'Visitor', 'where is this fella from?')
+const BaronCr = new ImageObj(Baron, BaronAlt, 'The Baron', 'new type 4 civiliation just dropped')
+const MartyCr = new ImageObj(Marty, null, 'Dunsmir in Stars', 'Marty is made out of the same junk as the sun I\'m pretty sure')
+const GekCr = new ImageObj(Gek, null, 'Gekyume in Orbit', 'This lil guy is kinda like a satelite probably')
+const GilgameshCr = new ImageObj(Gilgamesh, null, 'Gilgamesh', 'The Sumerians were comin up with all kinds of cool stuff')
+const GrassKnightCr = new ImageObj(GrassKnight, null, 'Green Knight', 'not like the movie')
+const JintaoCr = new ImageObj(Jintao, null, 'Jintao', 'idk funny')
+const NightBeachCr = new ImageObj(NightBeach, null, 'Kalaloch', 'Cool to see bioluminescent sand out there')
+const ShapeHillsCr = new ImageObj(ShapeHills, null, 'Shape Over Yakima', 'They show up sometimes')
+const SleeperCr = new ImageObj(Sleeper, null, 'Sumerian Disco', 'Mesopotamia is just fun to think about')
+const SpelboCr = new ImageObj(Spelbo, null, 'Cactus Jack', 'Travis Scott is a lot like Enkidu')
 
 
 // Paintings
-const BlueDemonPa = new ImageObj(BlueDemon, null, 'painting', 'desc')
-const DavidMeltzerPa = new ImageObj(DavidMeltzer, null, 'painting', 'desc')
-const GnomeSunsetPa = new ImageObj(GnomeSunset, null, 'painting', 'desc')
-const GoblinChillPa = new ImageObj(GoblinChill, null, 'painting', 'desc')
-const OutbackPa = new ImageObj(Outback, null, 'painting', 'desc')
-const ShadowMonkeyPa = new ImageObj(ShadowMonkey, null, 'painting', 'desc')
+const BlueDemonPa = new ImageObj(BlueDemon, null, 'Blue Demon', null)
+const DavidMeltzerPa = new ImageObj(DavidMeltzer, null, 'Meltzer', 'David would be a lot better if he was a green fella')
+const GnomeSunsetPa = new ImageObj(GnomeSunset, null, 'Gnome Over the Sound', 'Dome Gang in the clouds')
+const GoblinChillPa = new ImageObj(GoblinChill, null, 'Goblin Afternoon', 'That was a good hill to chill on')
+const OutbackPa = new ImageObj(Outback, null, 'Outback', 'Subaru ha served me well')
+const ShadowMonkeyPa = new ImageObj(ShadowMonkey, null, 'Shadow Monkey at Dusk', 'Uncle Boonmee')
 
 
 
@@ -299,8 +298,8 @@ function ArtContent() {
         Photoshop: {
           name: 'Photoshop',
           images: [
-            BloobornePs,
             EldenShrekPs,
+            BloobornePs,
             BlueDemonPs,
             JojoBogsPs,
             ChimpPs,
@@ -317,20 +316,19 @@ function ArtContent() {
         Crayon: {
           name: 'Crayon',
           images: [
-            DuxiuCr,
-            ZhonfaCr,
-            GuCr,
+            GilgameshCr,
+            SleeperCr,
+            SpelboCr,
             AlienCr,
             BaronCr,
             MartyCr,
             GekCr,
-            GilgameshCr,
             GrassKnightCr,
-            JintaoCr,
             NightBeachCr,
             ShapeHillsCr, 
-            SleeperCr,
-            SpelboCr
+            DuxiuCr,
+            ZhonfaCr,
+            GuCr,
           ]
         },
         Sketchbook1: {
@@ -343,7 +341,6 @@ function ArtContent() {
             BoogerDr,
             BugDr,
             CafeDr,
-            DeepWoodsDr,
             DonaldDr,
             DrugsDr,
             GoblinoDr,
@@ -352,8 +349,6 @@ function ArtContent() {
             FishWarDr,
             WebDr,
             FunkGoblinDr,
-            GoblinFollyDr,
-            GreenTotemDr,
             HankPracDr,
             IdkDr,
             IncinDr,
@@ -365,12 +360,9 @@ function ArtContent() {
             MessKidDr,
             NakesDr,
             NastyDr,
-            NewShapeDr,
             OldGutsDr,
             PadGutsDr,
             PunishedHankDr,
-            QuatchDr,
-            ShumashDr,
             SmilesDr,
             SmokeDr,
             //SillyDr, 
@@ -380,19 +372,10 @@ function ArtContent() {
             TrailerDr,
             TravelerDr,
             WakeDr,
-            YojimboDr
           ]
         }, 
         Sketchbook2: {
           name: 'Sketchbook #2',
-          images: [
-            BloobornePs,
-            PsErShrek,
-            PsBlueDemon
-          ]
-        }, 
-        Sketchbook3: {
-          name: 'Sketchbook #3',
           images: [
             FragileDr,
             DragonDr,
@@ -402,8 +385,19 @@ function ArtContent() {
             FunnyBotDr,
             RobotsDr
           ]
+        },
+        Sketchbook3: {
+          name: 'Sketchbook #3',
+          images: [
+            DeepWoodsDr,
+            NewShapeDr,
+            GoblinFollyDr,
+            GreenTotemDr,
+            QuatchDr,
+            ShumashDr,
+            YojimboDr
+          ]
         }
-        
       }
     },
     {
@@ -472,7 +466,7 @@ function ArtContent() {
     <div className="ArtPageContent">
       <div className="artInfo">
           <h1>Art</h1>
-          <p>idk I just keep making stuff cause it's fun
+          <p>The creative process is fun.
           </p>
         </div>
       <MediumsList mediums={mediums} setActiveMedium={setActiveMedium} activeMedium={activeMedium}/>

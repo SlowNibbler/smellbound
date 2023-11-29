@@ -12,6 +12,7 @@ const questSlice = createSlice({
     caveEnabled: true,
     boogieEnabled: false,
     selectedImage: defImg,
+    currentFont: 'monospace',
   },
   reducers: {
     incrementEventCounter: (state) => {
@@ -34,12 +35,15 @@ const questSlice = createSlice({
     },
     setTheme: (state, action) => {
       state.selectedImage = action.payload;
+    },
+    setFont: (state, action) => {
+      state.currentFont = action.payload;
     }
   },
 });
 
 
-export const { incrementEventCounter, setTalkedToPongo, toggleNightmare, setTheme, toggleBoogie, toggleCave } = questSlice.actions;
+export const { incrementEventCounter, setTalkedToPongo, toggleNightmare, setTheme, toggleBoogie, toggleCave, setFont } = questSlice.actions;
 export const selectQuest = (state) => state.quest;
 export const selectNightmareEnabled = (state) => state.quest.nightmareEnabled;
 export const selectBoogieEnabled = (state) => state.quest.boogieEnabled;

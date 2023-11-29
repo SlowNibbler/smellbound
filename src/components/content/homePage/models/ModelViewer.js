@@ -32,7 +32,7 @@ export default function ModelViewer() {
       position: [0, 2, 0]
     },
     {
-      name: 'Me',
+      name: 'McHugh',
       model: JimModel,
       scale: [7, 7, 7],
       rotation: [0, .1, 0],
@@ -89,7 +89,7 @@ export default function ModelViewer() {
           </group>
         </Canvas>
       </div>
-      <ModelList models={models} setActiveModel={setActiveModel} />
+      <ModelList models={models} setActiveModel={setActiveModel} activeModel={activeModel} />
     </div>
   )
 }

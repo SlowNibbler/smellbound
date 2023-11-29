@@ -17,21 +17,20 @@ class GamesContainer extends Component{
     return (
       <div className="gamerContent">
         <div className="gameInfo">
-          <h1>SmellBound Games</h1>
-          <p>Games are where it all comes together. Art, code, fun - everything. The modern day equivalent to the shit Da Vinci was doing
+          <h1>Games</h1>
+          <p>Making a video game is the modern day equivalent to the typa stuff Da Vinci was doing.
           </p>
         </div>
         <div className="games">
           <GameCard title="Secrets of the Bering Sea" url="https://slownibbler.itch.io/sotbs" 
-                  desc="Third-person crab-based shooter.
-                  After graduating from college with a degree in Computer Science, I decided, 
-                  like any rational adult would, that the best way to gain experience in order to be hired in my 
-                  field would be to create a third-person shooter based on a guy that reviews Deadliest Catch episodes." 
+                  desc="Third-person crab-based shooter. Run around as a Deadliest Catch youtuber fighting off waves of crab
+                  on the Bering Sea to save Captain Keith whose been turned into a shape. Real hard hitting stuff here.
+                  Learned Unreal engine and had to get good at Blender for this one. 
+                  My post-graduate portfolio project for the job market." 
                   year="2020" img={sotbsThumb} linkText="Fierce Lion Vlogs" link="https://www.youtube.com/channel/UCfXVLUdoydkH7VJS-oHd9sA"/>
           <GameCard title="Big Iron" url="https://slownibbler.itch.io/big-iron" 
                   desc="Sidescroller 'shooter' based off of Big Iron by Marty Robins. A solo game right after Town of Babel in order to keep pushing myself to learn
-                  game dev. This was originally planned to be styled like JoJo, but that pushed the scope
-                  way beyond the time I had to work on it." year="2020" img={bigIromThumb}
+                  game dev. This was originally planned to be styled like JoJo. That would have been the ultimate scope-creep." year="2020" img={bigIromThumb}
                   link="https://www.youtube.com/watch?v=0SKqhOE_fUI&list=PLCDb_HDeMgcmPw-FmkKPAnWfwIG3MWpGJ&index=8&t=1s"
                   linkText="Big Iron - Marty Robins"/>
           <GameCard title="Town of Babel" url="https://townofbabel.github.io/" 

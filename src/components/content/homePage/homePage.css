@@ -7,6 +7,10 @@ div.Home {
     text-align: center;
 }
 
+/* .SmellTitle:hover {
+    cursor: pointer;
+} */
+
 .HomeTitle {
     text-align: center;
 }
@@ -40,6 +44,7 @@ div.Home {
     display: grid;
     overflow: auto;
     border-radius: 10px;
+    text-align: center;
 }
 
 .HomeGridItem img {
@@ -107,7 +112,7 @@ div.Home {
 }
 
 .HomeLinks a {
-    color: rgb(210, 87, 87);
+    color: rgb(255, 127, 127);
 
     text-decoration: none;
 

@@ -114,6 +114,9 @@
     width: 100%;    
 }
 
+.Imagee:hover {
+  cursor: pointer;
+}
 
 
 .ScultpoWrap {
@@ -186,6 +189,10 @@
     height: 0;
     opacity: 0;
     transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+.image-info div {
+  margin:5px;
 }
   
   /* Add hover effect to the container */

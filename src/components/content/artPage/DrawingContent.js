@@ -90,8 +90,10 @@ const DrawingContent = ({ activeMedium }) => {
             {activeContent.images.map((image, index) => (
               <div key={index} className="image-container" onClick={() => openImageViewer(index)}>
                 <div className="image-info">
-                  {image.name}
-                  {image.text}
+                  <div>
+                    {image.name}<br/>
+                    {image.text}
+                  </div>
                 </div>
                 <Image image={image} index={index} nightmareEnabled={nightmareEnabled} />
               </div>
