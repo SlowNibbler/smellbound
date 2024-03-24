@@ -1,41 +1,65 @@
 import './App.css';
-import HomePage  from './components/content/homePage/homePage';
-import ArtContainer from './components/content/artPage/artPage';
-import GamesContainer from './components/content/gamesPage/gamesPage';
-import MysterysContainer from './components/content/mysterysPage/mysterysPage';
-import CodeContainer from './components/content/codePage/codePage';
+import { Provider, useSelector } from 'react-redux'
+import React from 'react';
 import {
   Routes,
   Route,
   Outlet
 } from "react-router-dom";
-import Sidebar from './components/sidebar/sidebar';
-import XiNice from './images/xiNice.jpg'
+
+import HomePage  from './components/content/homePage/homePage';
+import ArtContainer from './components/content/artPage/artPage';
+import GamesContainer from './components/content/gamesPage/gamesPage';
+import MysterysContainer from './components/content/mysterysPage/mysterysPage';
+import CodeContainer from './components/content/codePage/codePage';
+import { Sidebar, SidebarButton } from './components/sidebar/sidebar';
+import QuestStore from './components/state/Quests/QuestStore';
+import VideoSpawner from './components/utility/VideoSpawner';
+import InfiniteWebsiteScroll from './components/utility/InfiniteWebsiteScroll';
+import CaveSounds from './components/utility/caveSounds';
+
 
 
 
 function App() {
+
   return (
-    <div className='App'>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="art" element={<ArtContainer />} />
-          <Route path="games" element={<GamesContainer />} />
-          <Route path="code" element={<CodeContainer />} />
-          <Route path="mysterys" element={<MysterysContainer />} />
-        </Route>
-      </Routes>
-    </div>
+    <Provider store={QuestStore}>
+      <Appo/>
+    </Provider>
   );
 }
 
+function Appo() {
+  const selectedImage = useSelector((state) => state.quest.selectedImage);
+  return (
+      <div className='App' id='App' style={{ backgroundImage: `url(${selectedImage})` }}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="art" element={<ArtContainer />} />
+            <Route path="games" element={<GamesContainer />} />
+            <Route path="code" element={<CodeContainer />} />
+            <Route path="mystery" element={<MysterysContainer />} />
+          </Route>
+        </Routes>
+      </div>
+  );
+}
+
+
+
 function Layout() {
+  const nightmareEnabled = useSelector(state => state.quest.nightmareEnabled)
+  const caveEnabled = useSelector(state => state.quest.caveEnabled)
+
   return (
     <div className='Layout' >
+      <SidebarButton />
       <Sidebar/>
       <ContentWrapper />
-    
+      <VideoSpawner videoSrc="/videos/keepSpinning.webm" nightmareEnabled={nightmareEnabled} />
+      <CaveSounds nightmareEnabled={nightmareEnabled} caveEnabled={caveEnabled}/>
     </div>
   );
 }
@@ -48,7 +72,6 @@ function ContentWrapper() {
     </div>
   );
 }
-
 
 
 export default App;

@@ -22,31 +22,89 @@ import {
 class Sidebar extends Component{
   render() {
     return (
-      <div className="Sidebar">
-        <h1>Decisions</h1>
+      <div className="Sidebar" id="sidebar">
+        <h2>Decisions</h2>
         <ul className='list'>
-          <SidebarElement id = 'homeIcon' name = 'Home' image = {oval} link = '/' />
-          <SidebarElement id = 'artIcon' name = 'Art' image = {cube} link = 'art'/>
-          <SidebarElement id = 'gamesIcon' name = 'Games' image = {tri} link = 'games'/>
-          <SidebarElement id = 'codeIcon' name = 'Code' image = {prism} link = 'code'/>
-          <SidebarElement id = 'mysterysIcon' name = 'Mysterys' image = {oval} link = 'mysterys'/>
+          <SidebarElement id = 'homeIcon' name = 'Home' image = {oval} imageHover = {ovalHover} link = '/' />
+          <SidebarElement id = 'artIcon' name = 'Art' image = {cube} imageHover = {cubeHover} link = 'art'/>
+          <SidebarElement id = 'gamesIcon' name = 'Games' image = {tri} imageHover = {triHover} link = 'games'/>
+          <SidebarElement id = 'codeIcon' name = 'Code' image = {prism} imageHover = {prismHover} link = 'code'/>
+          <SidebarElement id = 'mysterysIcon' name = 'Mystery' image = {oval} imageHover = {ovalHover} link = 'mystery'/>
         </ul>
       </div>
     );
   }
 }
 
+/**
+ * button class that is either off or on and moves a div when clicked
+ */
+class SidebarButton extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      on: false,
+      position: 0
+    };
+  }
 
-class SidebarElement extends Component{
+  handleClick = () => {
+    const newTransformValue = this.state.on ? 'translateX(0px)' : 'translateX(-500px)';
+    this.setState({
+      on: !this.state.on,
+      position: document.getElementById('sidebar').style.transform = newTransformValue
+    });
+  };
+
   render() {
     return (
-      <li className="SidebarElement" >
+      <div className="SidebarButton">
+        <button onClick={this.handleClick}>
+          {this.state.on ? "ON" : "OFF"}
+        </button>
+      </div>
+    );
+  }
+}
+
+
+
+class SidebarElement extends Component{
+
+  mouseOver = false;
+
+  handleMouseOver = () => {
+      if (this.mouseOver === false) {
+        this.imgElement.src = this.props.imageHover;
+        this.mouseOver = true;
+        //console.log(this.mouseOver);
+      }
+  };
+
+  handleMouseOut = () => {
+    this.imgElement.src = this.props.image;
+    this.mouseOver = false;
+    //console.log(this.mouseOver);
+  };
+
+  render() {
+    return (
+      <li
+        className="SidebarElement"
+        onMouseEnter={this.handleMouseOver}
+        onMouseLeave={this.handleMouseOut}
+      >
         <Link to={this.props.link}>
-          <img src={this.props.image} onMouseOver={hoverIcon(this)}/>
+          <img
+            src={this.props.image}
+            alt="Sidebar Image"
+            ref={(img) => (this.imgElement = img)} // Assign the img element to a ref
+            style={{ display: "block" }}
+          />
           <span>{this.props.name}</span>
         </Link>
       </li>
-    )
+    );
   }
 }
 
@@ -55,8 +113,8 @@ class SidebarElement extends Component{
 
 // write a function that changes the source of an image to the hover version
 function hoverIcon(img){
-  console.log("img");
+  //console.log("img");
   //img.src = img.src.replace(img.src, img.src + 'Hover');
 }
 
-export default Sidebar;
+export {Sidebar, SidebarButton};

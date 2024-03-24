@@ -1,0 +1,120 @@
+.games {
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: stretch;
+    height: fit-content;
+    overflow-y: auto;
+    align-self: center;
+    margin-top: 10px;
+    max-height: 67vh;
+    border: 1px solid rgb(255, 242, 213);
+    border-radius: 10px;
+    overflow-x: auto;
+    max-width: -webkit-fill-available;
+}
+
+.gameInfo {
+    color: white;
+    border: white solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+
+}
+
+.gameInfo h1 {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 32pt;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.gameInfo p {
+    color: white;
+    text-align: center;
+    margin: 4px;
+}
+
+.gameCard {
+    color: white;
+    border: white solid 1px;
+    padding: 10px;
+    margin: 10px 20px 10px 10px;
+    display: flexbox;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+
+}
+
+.gameTitleandYear {
+    display: inline-block;
+}
+
+.gameTitle {
+    color: white;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.gameYear {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0px 0px 10px 10px;
+}
+
+.gameContent {
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.gamePic {
+    max-width: 250px;
+    border: white solid 1px;
+    display: flex;
+    margin-right: 10px;
+}
+
+.gameDesc {
+    display: contents;
+    vertical-align: top;
+    margin: 0px 0px 10px 10px;
+}
+
+.gameLink {
+    margin-top: 20px;
+    display: contents;
+    color: white;
+}
+
+.gamerContent {
+    flex-direction: column;
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .games {
+        max-height: none;
+    }
+
+    .gameContent {
+        flex-flow: column;
+    }
+
+
+}
+
+@media (max-width: 460px) {
+    .gamePic {
+        max-width: 100%;
+    }
+}
+
+

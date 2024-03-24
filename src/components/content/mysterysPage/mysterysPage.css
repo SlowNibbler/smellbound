@@ -1,0 +1,66 @@
+
+button {
+    color:rgb(255, 242, 213);
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+    border: 1px solid rgb(255, 242, 213);
+    border-radius: 10px;
+}
+
+
+.FreeImages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FreeImages img {
+    max-height: 30vh;
+    margin-bottom: 10px;
+}
+
+.FreeImages div {
+    margin-bottom: 10px;
+}
+
+
+.theme-list ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.theme-option {
+    display: inline-flex;
+}
+
+.headder {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.NightmareSwitch {
+    float: right;
+    margin-top: 10px;
+}
+
+
+.CaveSwitch {
+    margin-top: 10px;
+}
+
+.sorcerer-model {
+    display: flex;
+    flex-direction: column;
+}
+
+.sorcerer-button {
+    margin: 10px;
+}
+
+.animated-text {
+    text-decoration: none;
+    color:rgb(255, 242, 213);
+}

@@ -1,6 +1,127 @@
-div.home {
-    width: 500px;
-    height: 500px;
+div.Home {
 }
 
 
+.SmellTitle {
+    font-size: 3em;
+    text-align: center;
+}
+
+/* .SmellTitle:hover {
+    cursor: pointer;
+} */
+
+.HomeTitle {
+    text-align: center;
+}
+
+
+.HomeContentGrid {
+    display: grid;
+    grid-template-columns:  minmax(0, 1fr) minmax(0, 1fr); /* Two equal-width columns */
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Additional styling for the columns */
+.Left, .Right {
+    max-width: 100%; /* Limit items to the available width */
+}
+
+/* Media query for responsive layout */
+@media (max-width: 600px) {
+.HomeContentGrid {
+    grid-template-columns: minmax(0, 1fr); /* Switch to a single column layout */
+    }
+}
+
+.HomeGridItem {
+    border: 1px solid rgb(255, 242, 213);
+    max-width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+    display: grid;
+    overflow: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.HomeGridItem img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid rgb(255, 242, 213);
+}
+
+.ModelListItem {
+    display: inline-block;
+    border: 1px solid rgb(255, 242, 213);
+    border-top: none;
+    padding-left: .4em;
+    padding-right: .4em;   
+    padding-top: .1em;
+    padding-bottom: .1em;
+}
+
+.ModelListItem :hover {
+    cursor:crosshair
+}
+
+.ModelListItem:first-of-type {
+    border-radius: 0px 0px 0px 10px;
+}
+  
+.ModelListItem:last-of-type {
+    border-radius: 0px 0px 10px 0px;
+}
+
+#ModelViewerHolder {
+
+}
+
+.ModelViewer {
+    width: auto;
+    height: auto;
+}
+
+.ModelHolder {
+    width: 100%; /* Ensures the square div takes full width of the parent */
+    position: relative;
+
+}
+
+.CanvasWrapper {
+    border: 1px solid rgb(255, 242, 213);
+    border-radius: 10px 10px 10px 0px;
+    aspect-ratio: 1/.8;
+    margin: auto;
+    cursor: grab;
+    display: grid;
+}
+.CanvasWrapper :active {
+    cursor: grabbing
+
+}
+
+.HomeLinks {
+    text-align: center;
+}
+
+.HomeLinks h3 {
+    margin: 5px;
+}
+
+.HomeLinks a {
+    color: rgb(255, 127, 127);
+
+    text-decoration: none;
+
+}
+
+.BoogieSwitch {
+    padding-top: 10px;
+    padding-right: 6px;
+    float: right;
+    opacity: 60%;
+
+}
