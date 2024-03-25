@@ -183,7 +183,7 @@
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
-    color: #fff; /* Text color */
+    color: rgb(255, 242, 213); /* Text color */
     font-size: 14px; /* Adjust text size as needed */
     text-align: center;
     height: 0;
@@ -311,17 +311,17 @@
 
 
   .artInfo {
-    color: white;
-    border: white solid 1px;
+    /* color: rgb(255, 242, 213);
+    border: rgb(255, 242, 213) solid 1px;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 15px;
-    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+    background-color: rgba(0, 0, 0, 0.4); Black with 80% opacity */
 
 }
 
 .artInfo h1 {
-    color: white;
+    color: rgb(255, 242, 213);
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 32pt;
@@ -331,7 +331,7 @@
 }
 
 .artInfo p {
-    color: white;
+    color: rgb(255, 242, 213)white;
     text-align: center;
     margin: 4px;
 }

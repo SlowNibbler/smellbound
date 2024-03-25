@@ -6,7 +6,9 @@ import {
   HashRouter
 } from "react-router-dom";
 
+import '../../../style.css'
 import './gamesPage.css'
+
 
 import babelThumb from '../../../images/Games/babelThumb.png'
 import bigIromThumb from '../../../images/Games/bigironThumb.png'
@@ -18,8 +20,6 @@ class GamesContainer extends Component{
       <div className="gamerContent">
         <div className="gameInfo">
           <h1>Games</h1>
-          <p>Making a video game is the modern day equivalent to the typa stuff Da Vinci was doing.
-          </p>
         </div>
         <div className="games">
           <GameCard title="Secrets of the Bering Sea" url="https://slownibbler.itch.io/sotbs" 

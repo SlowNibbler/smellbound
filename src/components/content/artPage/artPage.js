@@ -465,10 +465,8 @@ function ArtContent() {
   return (
     <div className="ArtPageContent">
       <div className="artInfo">
-          <h1>Art</h1>
-          <p>The creative process is fun.
-          </p>
-        </div>
+        <h1>Art</h1>
+      </div>
       <MediumsList mediums={mediums} setActiveMedium={setActiveMedium} activeMedium={activeMedium}/>
       <ArtConent activeMedium={activeMedium}/>
     </div>
