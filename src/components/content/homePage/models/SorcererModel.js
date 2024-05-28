@@ -106,7 +106,7 @@ const SorcererModel = () => {
         src={isSpeaking ? SorcererGif : SorcererImg}
         alt="Sorcerer"
       />
-        {!isSpeaking ? (<button className="sorcerer-button" onClick={handleSpeakClick}>Speak to The Sorcerer</button>) : null}
+        {!isSpeaking ? (<button className="sorcerer-button" onClick={handleSpeakClick}>Commune With The Sorcerer</button>) : null}
 
         {(hasSpoken) ? (<a className="animated-text" href={displayText.linko} target='_blank' ><Typewriter text={displayText.name} delay={50} /></a>) : null}
 

@@ -1,0 +1,42 @@
+- general css file for styling all the pages at once
+    - all text should be controlled by the same color
+
+- mobile friendly
+    - on load, sidebar shouldn't be open
+    - clean up sidebar and top banner
+
+- images load faster/smaller res thumbnails?
+
+X - sidebar icon flickering
+
+
+Home Page
+- rewrite text
+- image displayed is random, pick from best art
+- add 3d model of tree
+- update pongo model
+- links to weird shit
+- export unreal gifs, add here
+- change colors of sidebar shapes to match pallette
+
+Art Page
+- find better way to do tab selection
+- make thumbnails for quicker loading
+- how to load images better
+- dont't do grid of 3d models, 1 model viewer and tabs 
+- add more art
+
+Mystery Page
+- add movie rec generator
+- better sorcerror
+- more themes, some unlock on nightmare mode
+- add pongo game theme
+- click somewhere and jiang video plays
+- monkey jumping in tub video loop
+
+
+General 
+- add score, click on cylinder +1 point
+- more ancient sumerian vibes
+- happier color pallette
+- css links need to be consistent

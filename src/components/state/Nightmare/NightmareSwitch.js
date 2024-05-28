@@ -27,7 +27,7 @@ const NightmareSwitch = () => {
     return (
       <div className='NightmareSwitch'>
         <button onClick={handleToggle}>
-        Enable Website
+        Enable Nightmare Mode
         </button>
       </div>
     );
