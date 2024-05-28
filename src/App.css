@@ -1,7 +1,7 @@
 .App {
   display: block;
   background-image: url(./images/homeImages/wall1.png);
-  background-color: rgb(42, 140, 197);
+  background-color: rgb(51, 51, 60);
   /* background-image: url('./images/homeImages/xiNice.jpg');  Replace with the actual path to your image */
   background-size: cover; /* Adjust the background size as needed */
   background-repeat: no-repeat; 
@@ -48,6 +48,16 @@
   align-items: normal;
   justify-content: center;
   height: 100%;
+  max-height: 95%;
+}
+
+.OuterLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: flex-start;
+  height: 100%;
+  max-height: 100%;
 }
 
 #videoPlayer {
@@ -62,4 +72,29 @@
   z-index: -1;
   position: absolute;
   /* Set other styling properties like width, height, etc. as needed */
+}
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px solid rgb(255, 242, 213);
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 242, 213); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 242, 213); 
 }

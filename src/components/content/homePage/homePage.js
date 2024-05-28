@@ -62,11 +62,11 @@ function HomeContent() {
         <div className="HomeGridItem">
             - Property of James McHugh -
             <br/>
-            A digital gallery of hand-crafter smell based artforms. 
+            Digital gallery of hand-crafter smell based artforms. 
             <br/>
-            Avant garde stench type stuff.
+            Avant-garde stench class media.
             <br/>
-            This is a good part of the internet.
+            One of the good parts of the computer.
 
             {/* where am it
             property of James McHugh
@@ -120,7 +120,7 @@ function OpeningQuote() {
     "Welcome to Smellbound",
     "Welcome to Baseball",
     "Welcome to Mesopotamia",
-    "Welcome to the Porcelain Throne",
+    "Welcome to the Bathroom",
     "Welcome to Dirt Site",
     "Welcome to Wallace & Gromit"
   ];

@@ -12,10 +12,10 @@ import ArtContainer from './components/content/artPage/artPage';
 import GamesContainer from './components/content/gamesPage/gamesPage';
 import MysterysContainer from './components/content/mysterysPage/mysterysPage';
 import CodeContainer from './components/content/codePage/codePage';
-import { Sidebar, SidebarButton } from './components/sidebar/sidebar';
+import { Sidebar } from './components/sidebar/sidebar';
+import { MobileSidebar, SidebarButton } from './components/sidebar/MobileSidebar';
 import QuestStore from './components/state/Quests/QuestStore';
 import VideoSpawner from './components/utility/VideoSpawner';
-import InfiniteWebsiteScroll from './components/utility/InfiniteWebsiteScroll';
 import CaveSounds from './components/utility/caveSounds';
 
 
@@ -48,18 +48,19 @@ function Appo() {
 }
 
 
-
 function Layout() {
   const nightmareEnabled = useSelector(state => state.quest.nightmareEnabled)
   const caveEnabled = useSelector(state => state.quest.caveEnabled)
 
   return (
-    <div className='Layout' >
+    <div className='OuterLayout' >
       <SidebarButton />
-      <Sidebar/>
-      <ContentWrapper />
-      <VideoSpawner videoSrc="/videos/keepSpinning.webm" nightmareEnabled={nightmareEnabled} />
-      <CaveSounds nightmareEnabled={nightmareEnabled} caveEnabled={caveEnabled}/>
+      <div className='Layout'>
+        <Sidebar/>
+        <ContentWrapper />
+        <VideoSpawner videoSrc="/videos/keepSpinning.webm" nightmareEnabled={nightmareEnabled} />
+        <CaveSounds nightmareEnabled={nightmareEnabled} caveEnabled={caveEnabled}/>
+      </div>
     </div>
   );
 }
