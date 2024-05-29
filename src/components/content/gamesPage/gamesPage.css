@@ -14,16 +14,15 @@
 }
 
 .gameInfo {
-    color: white;
+    /* color: white;
     border: white solid 1px;
     border-radius: 10px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+    background-color: rgba(0, 0, 0, 0.4); Black with 80% opacity */
 
 }
 
 .gameInfo h1 {
-    color: white;
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 32pt;
@@ -33,14 +32,12 @@
 }
 
 .gameInfo p {
-    color: white;
     text-align: center;
     margin: 4px;
 }
 
 .gameCard {
-    color: white;
-    border: white solid 1px;
+    border: 1px solid rgb(255, 242, 213);
     padding: 10px;
     margin: 10px 20px 10px 10px;
     display: flexbox;
@@ -54,7 +51,6 @@
 }
 
 .gameTitle {
-    color: white;
     text-align: left;
     font-size: 24px;
     font-weight: bold;
@@ -77,7 +73,7 @@
 
 .gamePic {
     max-width: 250px;
-    border: white solid 1px;
+    border: 1px solid rgb(255, 242, 213);
     display: flex;
     margin-right: 10px;
 }
@@ -91,7 +87,6 @@
 .gameLink {
     margin-top: 20px;
     display: contents;
-    color: white;
 }
 
 .gamerContent {

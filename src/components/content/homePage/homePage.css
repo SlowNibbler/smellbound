@@ -98,7 +98,7 @@ div.Home {
 
 .CanvasWrapper {
     border: 1px solid rgb(255, 242, 213);
-    border-radius: 10px 10px 10px 0px;
+    border-radius: 10px 10px 10px 10px;
     aspect-ratio: 1/.8;
     margin: auto;
     cursor: grab;
@@ -119,9 +119,7 @@ div.Home {
 
 .HomeLinks a {
     color: rgb(255, 127, 127);
-
     text-decoration: none;
-
 }
 
 .BoogieSwitch {

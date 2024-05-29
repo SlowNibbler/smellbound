@@ -1,5 +1,6 @@
 import { Component } from "react";
 import './sidebar.css'
+import '../../style.css'
 
 import ovalHover from '../../images/shapes/Oval_Hover.gif'
 import oval from '../../images/shapes/Oval.gif'
@@ -66,6 +67,7 @@ class SidebarElement extends Component{
         <Link to={this.props.link}         
           onMouseEnter={this.handleMouseOver}
           onMouseLeave={this.handleMouseOut}>
+
           <img
             src={this.props.image}
             alt="Sidebar Image"

@@ -31,13 +31,13 @@ export default function ModelViewer() {
       rotation: [-.2, .1, 0],
       position: [0, 2, 0]
     },
-    {
-      name: 'McHugh',
-      model: JimModel,
-      scale: [7, 7, 7],
-      rotation: [0, .1, 0],
-      position: [0, -1, 0]
-    },
+    // {
+    //   name: 'McHugh',
+    //   model: JimModel,
+    //   scale: [7, 7, 7],
+    //   rotation: [0, .1, 0],
+    //   position: [0, -1, 0]
+    // },
     {
       name: 'Pongo',
       model: PongoModel,

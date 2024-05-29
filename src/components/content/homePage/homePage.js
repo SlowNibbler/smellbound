@@ -1,6 +1,8 @@
 import { Component } from "react";
 import ModelViewer from './models/ModelViewer';
 
+import '../../../style.css';
+
 import './homePage.css';
 import BoogieSwitch from "../../state/Nightmare/BoogieSwitch";
 import SoundComponent from "../../state/soundComponent";
@@ -60,13 +62,13 @@ function HomeContent() {
       <div className="HomeContentGrid">
         <div className="Left">
         <div className="HomeGridItem">
-            - Property of James McHugh -
+            - Purpose -
             <br/>
-            Digital gallery of hand-crafter smell based artforms. 
+            Smellbound serves as a digital gallery for hand-crafted smell based art pieces. 
             <br/>
             Avant-garde stench class media.
             <br/>
-            One of the good parts of the computer.
+            The kinda stuff you'd find in a pile of mud.
 
             {/* where am it
             property of James McHugh
@@ -97,12 +99,14 @@ function HomeContent() {
               <a href="https://github.com/SlowNibbler" target="_blank">Github</a> <br/>
               <text>Games: </text>
               <a href="https://slownibbler.itch.io/" target="_blank">itch.io</a> <br/>
-              <text>Movies: </text>
-              <a href="https://letterboxd.com/TheWumboMan/" target="_blank">Letterboxd</a> <br/>
+              <text>Mongwa: </text>
+              <a href="https://www.google.com/search?client=ms-android-samsung-gs-rev1&sxsrf=APwXEdfyf8zdiWAWC07xt29mHzkC-nsiTg:1683521655237&q=mongwa&tbm=isch&sa=X&ved=2ahUKEwjWnu3x9uT-AhWELn0KHQgiCnMQ0pQJegQIIRAB&biw=412&bih=722&dpr=2.63" target="_blank">????</a> <br/>
+              {/* <text>Movies: </text> */}
+              {/* <a href="https://letterboxd.com/TheWumboMan/" target="_blank">Letterboxd</a> <br/> */}
               {/* <text>Twitter: </text>
               <a href="" target="_blank">Twitter</a>  */}
-              <text>Business: </text>
-              <a href="https://www.linkedin.com/in/james-mchugh-a8297b163/" target="_blank">Linkedin</a> 
+              {/* <text>Business: </text> */}
+              {/* <a href="https://www.linkedin.com/in/james-mchugh-a8297b163/" target="_blank">Linkedin</a>  */}
             </div>
           </div>
           <BoogieSwitch boo={boogieEnabled} />

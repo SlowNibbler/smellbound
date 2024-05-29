@@ -23,8 +23,6 @@ class CodeContainer extends Component{
       <div className="gamerContent">
         <div className="gameInfo">
           <h1>Code</h1>
-          <p>Computer is for the worms.
-          </p>
         </div>
         <div className="games">
           <GameCard title="Pocket Dungeon" url="https://github.com/SlowNibbler/PocketDungeonAlt"
