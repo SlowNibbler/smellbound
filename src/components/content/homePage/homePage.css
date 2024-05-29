@@ -53,6 +53,12 @@ div.Home {
     border: 1px solid rgb(255, 242, 213);
 }
 
+.ModelList {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
 .ModelListItem {
     display: inline-block;
     border: 1px solid rgb(255, 242, 213);

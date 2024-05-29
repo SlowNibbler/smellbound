@@ -1,6 +1,5 @@
 import { Component } from "react";
 import './sidebar.css'
-import '../../style.css'
 
 import ovalHover from '../../images/shapes/Oval_Hover.gif'
 import oval from '../../images/shapes/Oval.gif'
@@ -11,7 +10,8 @@ import triHover from '../../images/shapes/Tri_Hover.gif'
 import prism from '../../images/shapes/Prism.gif'
 import prismHover from '../../images/shapes/Prism_Hover.gif'
 
-
+import ham from '../../images/ham.png'
+import cross from '../../images/cross.png'
 
 import {
   Routes,
@@ -20,10 +20,10 @@ import {
   HashRouter
 } from "react-router-dom";
 
-class Sidebar extends Component{
+class MobileSidebar extends Component{
   render() {
     return (
-      <div className="Sidebar" id="sidebar">
+      <div className="Sidebar" id="MobileSidebar">
         <h2>Decisions</h2>
         <ul className='list'>
           <SidebarElement id = 'homeIcon' name = 'Home' image = {oval} imageHover = {ovalHover} link = '/' />
@@ -37,7 +37,46 @@ class Sidebar extends Component{
   }
 }
 
+/**
+ * button class that is either off or on and moves a div when clicked
+ */
+class SidebarButton extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      on: false,
+      position: 0
+    };
+  }
 
+  handleClick = () => {
+    console.log('fsfsdfsfsfsf')
+    const newTransformValue = this.state.on ? 'translateX(0px)' : 'translateX(-250px)';
+    this.setState({
+      on: !this.state.on,
+      position: document.getElementById('MobileSidebar').style.transform = newTransformValue
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <div className="SidebarButton">
+          <button onClick={this.handleClick}>
+            {this.state.on ? <img src={ham}/> : <img src={cross}/>}
+          </button>
+          <span>
+            Smellbound
+          </span>
+        </div>
+        <div>
+          <MobileSidebar/>
+        </div>
+      </div>
+
+    );
+  }
+}
 
 
 
@@ -59,15 +98,15 @@ class SidebarElement extends Component{
     //console.log(this.mouseOver);
   };
 
+
   render() {
     return (
       <li
         className="SidebarElement"
       >
-        <Link to={this.props.link}         
+        <Link to={this.props.link}
           onMouseEnter={this.handleMouseOver}
           onMouseLeave={this.handleMouseOut}>
-
           <img
             src={this.props.image}
             alt="Sidebar Image"
@@ -90,4 +129,4 @@ function hoverIcon(img){
   //img.src = img.src.replace(img.src, img.src + 'Hover');
 }
 
-export {Sidebar};
+export {MobileSidebar, SidebarButton};

@@ -66,7 +66,7 @@ function HomeContent() {
             <br/>
             Smellbound serves as a digital gallery for hand-crafted smell based art pieces. 
             <br/>
-            Avant garde stench type stuff.
+            Avant-garde stench class media.
             <br/>
             The kinda stuff you'd find in a pile of mud.
 
@@ -124,6 +124,7 @@ function OpeningQuote() {
     "Welcome to Smellbound",
     "Welcome to Baseball",
     "Welcome to Mesopotamia",
+    "Welcome to the Bathroom",
     "Welcome to Dirt Site",
     "Welcome to Wallace & Gromit"
   ];

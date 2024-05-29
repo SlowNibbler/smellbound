@@ -22,21 +22,7 @@
 
 }
 
-/* Media query to hide the sidebar on narrow screens (e.g., mobile devices) */
-@media (max-width: 768px) {
-    .Sidebar {
-        transform: translateX(-500px); /* Move the sidebar off-screen */
-        flex: 0; /* Remove the flex property to prevent it from taking up space */
-        min-width: 0; /* Remove the minimum width */
-        padding: 0px; /* Add some padding to the sidebar content */
-        transition: transform 1s ease; /* Add a smooth transition effect */
-    }
-}
-@media (min-width: 769px) {
-    .SidebarButton {
-        display: none;
-    }
-}
+
 
 div.Sidebar h1 {
     display: block;
@@ -80,6 +66,58 @@ div.Sidebar ul li img {
 div.Sidebar ul li span {
     align-self: center;
     padding-left: 10px;
-    /* color: rgb(255, 242, 213); */
+    color: rgb(255, 242, 213);
+}
 
+.SidebarButton {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 80% opacity */
+    border-bottom: 1px solid rgb(255, 242, 213);
+
+}
+
+.SidebarButton span {
+    color: rgb(255, 242, 213);
+    padding: 12px;
+}
+
+.SidebarButton button {
+    border: none;
+    background-color:rgba(0, 0, 0, 0);
+    left: 0;
+    position: absolute;
+}
+
+.SidebarButton button img {
+    height: 32px;
+}
+
+
+#MobileSidebar {
+    position: absolute;
+    z-index: 3;
+    margin-left: 20px;
+}
+
+
+/* Media query to hide the sidebar on narrow screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    .Sidebar {
+        display: none;
+    }
+
+    #MobileSidebar {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .SidebarButton {
+        display: none;
+    }
+
+    #MobileSidebar {
+        display: none;
+    }
 }
