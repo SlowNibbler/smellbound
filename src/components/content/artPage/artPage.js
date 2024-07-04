@@ -294,157 +294,120 @@ function ArtContent() {
   const mediums =[
     {
       name: 'Drawing',
-      content: {
-        Photoshop: {
-          name: 'Photoshop',
-          images: [
-            EldenShrekPs,
-            BloobornePs,
-            BlueDemonPs,
-            JojoBogsPs,
-            ChimpPs,
-            StrahdLadsPs,
-            HandsPs,
-            GreekBogPs,
-            JebPs,
-            MustangPs,
-            CowboyPs,
-            PongoPs,
-            ToshiroPs,
-          ]
-        },
-        Crayon: {
-          name: 'Crayon',
-          images: [
-            GilgameshCr,
-            SleeperCr,
-            SpelboCr,
-            AlienCr,
-            BaronCr,
-            MartyCr,
-            GekCr,
-            GrassKnightCr,
-            NightBeachCr,
-            ShapeHillsCr, 
-            DuxiuCr,
-            ZhonfaCr,
-            GuCr,
-          ]
-        },
-        Sketchbook1: {
-          name: 'Sketchbook #1',
-          images: [
-            //OfficeDr,
-            BeastDr,
-            BogJojoDr,
-            BogPracDr,
-            BoogerDr,
-            BugDr,
-            CafeDr,
-            DonaldDr,
-            DrugsDr,
-            GoblinoDr,
-            GoblinosDr,
-            EyesightDr,
-            FishWarDr,
-            WebDr,
-            FunkGoblinDr,
-            HankPracDr,
-            IdkDr,
-            IncinDr,
-            KingEmailDr,
-            KKDr,
-            KnightDr,
-            //ScreensDr,
-            IslandsDr,
-            MessKidDr,
-            NakesDr,
-            NastyDr,
-            OldGutsDr,
-            PadGutsDr,
-            PunishedHankDr,
-            SmilesDr,
-            SmokeDr,
-            //SillyDr, 
-            SomethingDr,
-            //CodingDr,
-            GovDr,
-            TrailerDr,
-            TravelerDr,
-            WakeDr,
-          ]
-        }, 
-        Sketchbook2: {
-          name: 'Sketchbook #2',
-          images: [
-            FragileDr,
-            DragonDr,
-            WildDr,
-            DizzynDr,
-            EdDr,
-            FunnyBotDr,
-            RobotsDr
-          ]
-        },
-        Sketchbook3: {
-          name: 'Sketchbook #3',
-          images: [
-            DeepWoodsDr,
-            NewShapeDr,
-            GoblinFollyDr,
-            GreenTotemDr,
-            QuatchDr,
-            ShumashDr,
-            YojimboDr
-          ]
-        }
-      }
+      images: [
+        //OfficeDr,
+        BeastDr,
+        BogJojoDr,
+        BogPracDr,
+        BoogerDr,
+        BugDr,
+        CafeDr,
+        DonaldDr,
+        DrugsDr,
+        GoblinoDr,
+        GoblinosDr,
+        EyesightDr,
+        FishWarDr,
+        WebDr,
+        FunkGoblinDr,
+        HankPracDr,
+        IdkDr,
+        IncinDr,
+        KingEmailDr,
+        KKDr,
+        KnightDr,
+        //ScreensDr,
+        IslandsDr,
+        MessKidDr,
+        NakesDr,
+        NastyDr,
+        OldGutsDr,
+        PadGutsDr,
+        PunishedHankDr,
+        SmilesDr,
+        SmokeDr,
+        //SillyDr, 
+        SomethingDr,
+        //CodingDr,
+        GovDr,
+        TrailerDr,
+        TravelerDr,
+        WakeDr,
+        FragileDr,
+        DragonDr,
+        WildDr,
+        DizzynDr,
+        EdDr,
+        FunnyBotDr,
+        RobotsDr,
+        DeepWoodsDr,
+        NewShapeDr,
+        GoblinFollyDr,
+        GreenTotemDr,
+        QuatchDr,
+        ShumashDr,
+        YojimboDr
+      ]
+    },
+    {
+      name: 'Crayon',
+      images: [
+        GilgameshCr,
+        SleeperCr,
+        SpelboCr,
+        AlienCr,
+        BaronCr,
+        MartyCr,
+        GekCr,
+        GrassKnightCr,
+        NightBeachCr,
+        ShapeHillsCr, 
+        DuxiuCr,
+        ZhonfaCr,
+        GuCr,
+      ]
     },
     {
       name: 'Painting',
-      content: {
-        setOne: {
-          name: 'First Batch',
-          images: [
-            ShadowMonkeyPa,
-            DavidMeltzerPa, 
-            BlueDemonPa,
-            GnomeSunsetPa
-          ]
-        }, 
-        setThree: {
-          name: 'Eastern Wa',
-          images: [
-            GoblinChillPa,
-            OutbackPa
-          ]
-        }
-      }
+      images: [
+        ShadowMonkeyPa,
+        DavidMeltzerPa, 
+        BlueDemonPa,
+        GnomeSunsetPa
+      ]
     },
     {
-      name: 'Sculpting',
-      content: {
-        setOne: {
-          name: 'Pottery',
-          images: [
-            TumboMdl,
-            PagliombroMdl,
-            KvagnerMdl,
-            ScrimbloMdl,
-            ShumashMdl,
-            TrungusMdl,
-            ElJefeMdl
-          ]
-        }, 
-        setTwo: {
-          name: 'Blender',
-          images: [
-            LegsMdl,
-            CrabMdl
-          ]
-        }
-      }
-    }
+      name: 'Pottery',
+      images: [
+        TumboMdl,
+        PagliombroMdl,
+        KvagnerMdl,
+        ScrimbloMdl,
+        ShumashMdl,
+        TrungusMdl,
+        ElJefeMdl
+      ]
+    },
+    {
+      name: 'Digital',
+      images: [
+        EldenShrekPs,
+        BloobornePs,
+        BlueDemonPs,
+        JojoBogsPs,
+        ChimpPs,
+        StrahdLadsPs,
+        HandsPs,
+        GreekBogPs,
+        JebPs,
+        MustangPs,
+        CowboyPs,
+        PongoPs,
+        ToshiroPs,
+        LegsMdl,
+        CrabMdl
+      ]
+    },
   ];
 
   const defaultMedium = mediums[0]; // Set your default model here

@@ -6,7 +6,7 @@ import '../../../style.css';
 import './homePage.css';
 import BoogieSwitch from "../../state/Nightmare/BoogieSwitch";
 import SoundComponent from "../../state/soundComponent";
-import Smellbound from "../../../images/homeImages/QuatchBound.jpg"
+import Smellbound from "../../../images/homeImages/QuatchBound2.png"
 import { Provider, useSelector, useDispatch } from 'react-redux'
 import { setFont } from "../../state/Quests/QuestSlice";
 

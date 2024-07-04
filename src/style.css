@@ -1,17 +1,22 @@
-text {
+* {
     color: rgb(255, 242, 213);
+    
+}
+
+div {
+    border: rgb(255, 242, 213);
+}
+
+text {
 }
 
 h1 {
-    color: rgb(255, 242, 213);
 }
 
 h2 {
-    color: rgb(255, 242, 213);
 }
 
 a {
-    color: rgb(255, 242, 213);
 }
 
 a:hover {
@@ -20,5 +25,4 @@ a:hover {
 }
 
 p {
-    color: rgb(255, 242, 213);
 }

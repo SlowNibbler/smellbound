@@ -39,14 +39,20 @@ export default function ModelViewer() {
     //   position: [0, -1, 0]
     // },
     {
+      name: 'The Rat 100',
+      model: RatModel,
+      scale: [40, 40, 40],
+      position: [0, 0, 0]
+    },
+    {
       name: 'Pongo',
       model: PongoModel,
       position: [0, 0, 0]
     },
     {
-      name: 'El Jefe',
-      model: RatModel,
-      scale: [40, 40, 40],
+      name: 'Good Tree',
+      model: TrungusModel,
+      scale: [50, 50, 50],
       position: [0, 0, 0]
     },
     {

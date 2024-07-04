@@ -69,8 +69,9 @@ div.Home {
     padding-bottom: .1em;
 }
 
-.ModelListItem :hover {
-    cursor:crosshair
+.ModelListItem:hover {
+    cursor:pointer;
+    color: rgb(232, 76, 76);
 }
 
 .ModelListItem:first-of-type {
@@ -98,15 +99,30 @@ div.Home {
 
 .CanvasWrapper {
     border: 1px solid rgb(255, 242, 213);
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 0px;
     aspect-ratio: 1/.8;
     margin: auto;
     cursor: grab;
     display: grid;
 }
+
 .CanvasWrapper :active {
     cursor: grabbing
 
+}
+
+/* Media query for responsive layout */
+@media (max-width: 1384px) {
+.CanvasWrapper {
+    border-radius: 10px 10px 0px 0px;
+    }
+.ModelListItem:first-of-type {
+    border-radius: 0px 0px 0px 0px;
+}
+    
+.ModelListItem:last-of-type {
+    border-radius: 0px 0px 0px 0px;
+}
 }
 
 .HomeLinks {
@@ -118,8 +134,10 @@ div.Home {
 }
 
 .HomeLinks a {
-    color: rgb(255, 127, 127);
     text-decoration: none;
+}
+.HomeLinks a:hover {
+    color: rgb(232, 76, 76);
 }
 
 .BoogieSwitch {

@@ -66,7 +66,6 @@ class SidebarButton extends Component{
             {this.state.on ? <img src={ham}/> : <img src={cross}/>}
           </button>
           <span>
-            Smellbound
           </span>
         </div>
         <div>
