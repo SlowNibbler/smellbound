@@ -81,7 +81,8 @@
     border: 1px solid rgb(255, 242, 213);
     padding: 15px;
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Maximum 3 images per row */
+    /* grid-template-columns: repeat(4, minmax(200px, 1fr)); Maximum 3 images per row */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px; /* Adjust the gap as needed */
     overflow: auto; /* Enable vertical scrolling when content exceeds the maximum height */
     max-height: 67vh; /* Set your desired maximum height */
