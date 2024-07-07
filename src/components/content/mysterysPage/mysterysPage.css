@@ -68,3 +68,7 @@ button:hover {
     text-decoration: none;
     color:rgb(255, 242, 213);
 }
+
+.animated-text :hover {
+    color: rgb(232, 76, 76);
+}

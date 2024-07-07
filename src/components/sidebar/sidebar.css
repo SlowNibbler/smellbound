@@ -1,6 +1,6 @@
 .Sidebar {
     flex: 0 1 10%;
-    background-color: rgba(0, 0, 0, 0.2); /* Black with 80% opacity */
+    background-color: rgba(0, 0, 0, 0.3); /* Black with 80% opacity */
     backdrop-filter: blur(10px); /* Apply a blur effect to the background */
     transition: transform 1s ease; /* Add a smooth transition effect */
     width: fit-content; /* Fixed width for the sidebar */
@@ -54,8 +54,7 @@ div.Sidebar ul li a {
 }
 
 div.Sidebar ul li a:hover span {
-    /* color: rgb(255, 127, 127); */
-
+    color: rgb(232, 76, 76);
 }
 
 div.Sidebar ul li img {

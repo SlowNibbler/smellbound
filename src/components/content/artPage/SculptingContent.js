@@ -9,16 +9,17 @@ import { Canvas, useThree  } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 
 const SculptingContent = ({ activeMedium }) => {
-    const [activeContent, setActiveContent] = useState(Object.values(activeMedium.content)[0]);
-  
+    // const [activeContent, setActiveContent] = useState(Object.values(activeMedium.content)[0]);
+    const images = Object.values(activeMedium.images); // Set your default model here
+
 
     const nightmareEnabled = useSelector((state)=>state.quest.nightmareEnabled)
 
-    console.log(activeContent)
+    // console.log(activeContent)
 
     return (
       <div className="ArtContent">
-        <ul className="SubList">
+        {/* <ul className="SubList">
           {Object.values(activeMedium.content).map((content, index) => (
             <li id={content.name === activeContent.name ? 'selected' : ''} className="SubListItem" key={index}>
               <div onClick={() => setActiveContent(content)} key={index}>
@@ -26,9 +27,9 @@ const SculptingContent = ({ activeMedium }) => {
               </div>
             </li>
           ))}
-        </ul>
+        </ul> */}
         <div className="ImageGallery">
-          {activeContent.images.map((image, index) => (
+          {images.map((image, index) => (
             <CanvasWrapper nightmareEnabled={nightmareEnabled} key={index} activeModel={image} index={index}/>
           ))}
         </div>

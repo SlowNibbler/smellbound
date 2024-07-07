@@ -39,7 +39,7 @@ export default function ModelViewer() {
     //   position: [0, -1, 0]
     // },
     {
-      name: 'The Rat 100',
+      name: 'Rat 100',
       model: RatModel,
       scale: [40, 40, 40],
       position: [0, 0, 0]

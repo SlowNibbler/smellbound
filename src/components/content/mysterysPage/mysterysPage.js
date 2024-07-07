@@ -26,7 +26,7 @@ function MysteryContent() {
 
   return (
     <div className="HomeContent">
-      <div className="SmellTitle">Mysteries</div>
+      <div className="SmellTitle">Mystery</div>
       
       <div className="HomeContentGrid">
         <div className="Left">

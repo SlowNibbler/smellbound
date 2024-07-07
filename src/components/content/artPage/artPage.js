@@ -389,6 +389,13 @@ function ArtContent() {
       ]
     },
     {
+      name: '3D',
+      images: [
+        LegsMdl,
+        CrabMdl
+      ]
+    },
+    {
       name: 'Digital',
       images: [
         EldenShrekPs,
@@ -404,8 +411,6 @@ function ArtContent() {
         CowboyPs,
         PongoPs,
         ToshiroPs,
-        LegsMdl,
-        CrabMdl
       ]
     },
   ];
@@ -450,7 +455,7 @@ function MediumsList({mediums, setActiveMedium, activeMedium}) {
 }
 
 function ArtConent({activeMedium}) {
-  if (activeMedium.name === 'Sculpting') {
+  if (activeMedium.name === 'Pottery' || activeMedium.name === '3D') {
     return (<SculptingContent activeMedium={activeMedium}/>);
   } else {
     return (
