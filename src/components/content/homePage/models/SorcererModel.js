@@ -29,10 +29,10 @@ const SorcererModel = () => {
       name: 'Heavy Metal',
       linko: 'https://www.google.com/search?q=heavy+metal+magazine+covers+1970s&tbm=isch&ved=2ahUKEwilodOhvcn-AhVIAzQIHTSHDFYQ2-cCegQIABAC&oq=heavy+metal+magazine+covers+&gs_lcp=ChJtb2JpbGUtZ3dzLXdpei1pbWcQARgBMgUIABCABDIFCAAQgAQyBAgAEB4yBggAEAUQHjIGCAAQBRAeOgQIIxAnOgYIABAHEB5QkwVYkwVg4AtoAHAAeACAAXeIAesBkgEDMC4ymAEAoAEBwAEB&sclient=mobile-gws-wiz-img&ei=KRxKZOXoEMiG0PEPtI6ysAU&bih=722&biw=412&client=ms-android-samsung-gs-rev1'
     },
-    {
-      name: 'Anyone Can Cook',
-      linko: 'https://youtu.be/S_zpTByvjFE?si=myWGZQ81SG9LJY1n'
-    },
+    // {
+    //   name: 'Anyone Can Cook',
+    //   linko: 'https://youtu.be/S_zpTByvjFE?si=myWGZQ81SG9LJY1n'
+    // },
     {
       name: 'Mongwa',
       linko: 'https://www.google.com/search?client=ms-android-samsung-gs-rev1&sxsrf=APwXEdfyf8zdiWAWC07xt29mHzkC-nsiTg:1683521655237&q=mongwa&tbm=isch&sa=X&ved=2ahUKEwjWnu3x9uT-AhWELn0KHQgiCnMQ0pQJegQIIRAB&biw=412&bih=722&dpr=2.63'

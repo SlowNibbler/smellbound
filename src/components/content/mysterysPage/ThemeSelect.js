@@ -17,7 +17,7 @@ const ThemeSelect = () => {
   const dispatch = useDispatch();
 
   const options = [
-    // { id: 'option1', label: 'Plain', image: '' },
+    { id: 'option1', label: 'Plain', image: '' },
     { id: 'option2', label: 'The Fellas', image: masks },
     { id: 'option3', label: 'Topanga', image: calabasas },
     { id: 'option3', label: 'Green', image: evergreen },

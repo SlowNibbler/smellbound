@@ -18,7 +18,7 @@ const PictureShow = ({ images, currentIndex, closeViewer, nextImage, prevImage }
           <div class="arrow-left" />
         </div> */}
 
-        <div className="image-container-big">
+        <div className="image-container-big" >
         <div className="close-button" onClick={closeViewer}>
           X
         </div>
@@ -37,7 +37,7 @@ const PictureShow = ({ images, currentIndex, closeViewer, nextImage, prevImage }
           <div className='image-info-bottom-desc'>
             <div>{image.name}</div>
             
-            <div>{image.text}</div>
+            {/* <div>{image.text}</div> */}
             
           </div>
           <div onClick={nextImage}>

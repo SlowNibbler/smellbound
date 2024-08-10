@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import HomeArt from '../homePage/HomeArt'
 import './mysterysPage.css'
 
 import image1 from '../../../images/GoodImages/1.jpg'
@@ -33,7 +33,25 @@ const imageList = [
   image13
 ];
 
+
+
 function FreeImage() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    // Implement logic to go to the next image
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageList.length);
+  };
+  
+  const prevImage = () => {
+    // Implement logic to go to the previous image
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? imageList.length - 1 : prevIndex - 1
+    );
+  };
+  
+
+
   const [currentImage, setCurrentImage] = useState(getRandomImage());
 
   function getRandomImage() {
@@ -48,9 +66,8 @@ function FreeImage() {
 
   return (
     <div className='FreeImages'>
-      <div>Images to look at</div>
-      <img src={currentImage} alt="Random Image" />
-      <button onClick={handleChangeImage}>Give me a new image</button>
+      <div>Masterpieces</div>
+      <HomeArt images={imageList} currentIndex={currentImageIndex} prevImage={prevImage} nextImage={nextImage}></HomeArt>
     </div>
   );
 }

@@ -13,6 +13,8 @@ import './gamesPage.css'
 import babelThumb from '../../../images/Games/babelThumb.png'
 import bigIromThumb from '../../../images/Games/bigironThumb.png'
 import sotbsThumb from '../../../images/Games/sotbsThumb.png'
+import pongoThumb from '../../../images/homeImages/pongoGifs/pongoGif_02.gif'
+
 
 class GamesContainer extends Component{
   render() {
@@ -22,6 +24,9 @@ class GamesContainer extends Component{
           <h1>Games</h1>
         </div>
         <div className="games">
+        <GameCard title="Pongo's Big Day Out" url="https://www.youtube.com/watch?v=DJsn1QivbKM" 
+                  desc="I'm gonna have Pongo work for the post office and walk around in nice places." 
+                  year="idk" img={pongoThumb} linkText="Opening Cutscene" link="https://www.youtube.com/watch?v=DJsn1QivbKM"/>
           <GameCard title="Secrets of the Bering Sea" url="https://slownibbler.itch.io/sotbs" 
                   desc="Third-person crab-based shooter. Run around as a Deadliest Catch youtuber fighting off waves of crab
                   on the Bering Sea to save Captain Keith whose been turned into a shape. Real hard hitting stuff here.

@@ -17,7 +17,7 @@ import PsMustang from '../../../images/Art/Drawings/Photoshop/mustang neon.png'
 import PsCowbout from '../../../images/Art/Drawings/Photoshop/online cowboy.png'
 import PsPongo from '../../../images/Art/Drawings/Photoshop/pongoColumbiaGroovy.jpg'
 import PsPongoB from '../../../images/Art/Drawings/Photoshop/pongoColumbiaGroovy1.jpg'
-import PsToshiro from '../../../images/Art/Drawings/Photoshop/toshiro crop.png'
+// import PsToshiro from '../../../images/Art/Drawings/Photoshop/toshiro crop.png'
 
 // Sketchbook
 import Office from '../../../images/Art/Drawings/Sketchbook/another day in the office.png'
@@ -66,7 +66,7 @@ import Gov from '../../../images/Art/Drawings/Sketchbook/support your local gove
 import Trailer from '../../../images/Art/Drawings/Sketchbook/trailer park gaurdian.png'
 import Traveler from '../../../images/Art/Drawings/Sketchbook/traveler.png'
 import Wake from '../../../images/Art/Drawings/Sketchbook/wake up.png'
-import Yojimbo from '../../../images/Art/Drawings/Sketchbook/Yojimbo.jpg'
+// import Yojimbo from '../../../images/Art/Drawings/Sketchbook/Yojimbo.jpg'
 
 
 // Sketchbook 3
@@ -110,6 +110,9 @@ import GnomeSunset from '../../../images/Art/Paintings/gnomeOverTheSound.jpg'
 import GoblinChill from '../../../images/Art/Paintings/goblinChill.jpg'
 import Outback from '../../../images/Art/Paintings/outback.jpg'
 import ShadowMonkey from '../../../images/Art/Paintings/shadowMonkey.jpg'
+import GreenSphinx from '../../../images/Art/Paintings/greenSphinx.jpg'
+import Squatch from '../../../images/Art/Paintings/squatch.jpg'
+
 
 // Sculptures
 import Tumbo from '../../../images/3dModels/Tumbo.glb'
@@ -125,6 +128,16 @@ import ImageViewer from "./PictureShow.js"
 import Legs from '../../../images/Art/Models/legs.glb'
 import LegsAlt from '../../../images/Art/Models/legsNeon.glb'
 import Crab from '../../../images/Art/Models/bairdiCrab.glb'
+import Tree from '../../../images/3dModels/goodTree.glb'
+
+// Pongo
+import Pongo1 from "../../../images/homeImages/pongoGifs/pongoGif_01.gif"
+import Pongo2 from "../../../images/homeImages/pongoGifs/pongoGif_02.gif"
+import Pongo3 from "../../../images/homeImages/pongoGifs/pongoGif_03.gif"
+import Pongo4 from "../../../images/homeImages/pongoGifs/pongoGif_04.gif"
+import Pongo5 from "../../../images/homeImages/pongoGifs/pongoGif_05.gif"
+
+
 
 
 
@@ -171,6 +184,8 @@ const LegsAltOj = new ModelObj('Legs', LegsAlt, [.05, .05, .05], [0, 0, 0]);
 const LegsMdl = new ImageObj(Legs, LegsAltOj, '40 Legs', 'idk it\'s just 40 legs', LegsOj);
 const CrabOj = new ModelObj('Crab', Crab, [.02, .02, .02], [0, 0, 0]);
 const CrabMdl = new ImageObj(Crab, null, 'Crab', 'default_enemy.fbx', CrabOj);
+const TreeOj = new ModelObj('Tree', Tree, [.02, .02, .02], [0, 0, 0]);
+const TreeMdl = new ImageObj(Tree, null, 'Tree', 'trrr.fbx', TreeOj);
 
 // Photoshop
 const BloobornePs = new ImageObj(PsBloodborne, null, 'Blugerborne', 'its gamieng, gotta love it')
@@ -185,7 +200,7 @@ const JebPs = new ImageObj(PsJeb, null, 'Jeb!', 'Elected sheriff of Florida')
 const MustangPs = new ImageObj(PsMustang, null, 'Remember Drive?', 'cool movie')
 const CowboyPs = new ImageObj(PsCowbout, null, 'Digital Cowboy', 'even cowboys has email')
 const PongoPs = new ImageObj(PsPongo, PsPongoB, 'Guerilla Pongo', 'Pongo is coolest when he\'s some kind of contra in South America')
-const ToshiroPs = new ImageObj(PsToshiro, null, 'Toshiro', 'Yojimbo is still goated')
+// const ToshiroPs = new ImageObj(PsToshiro, null, 'Toshiro', 'Yojimbo is still goated')
 
 
 // Sketchbook
@@ -233,7 +248,7 @@ const GovDr = new ImageObj(Gov, null, 'Local Politics', 'Funniest sitcom charact
 const TrailerDr = new ImageObj(Trailer, null, 'Trailer Park Guardian', null)
 const TravelerDr = new ImageObj(Traveler, null, 'Traveler', null)
 const WakeDr = new ImageObj(Wake, null, 'Sleep', 'Computers don\'t really know about sleep')
-const YojimboDr = new ImageObj(Yojimbo, null, 'Big Grin', null)
+// const YojimboDr = new ImageObj(Yojimbo, null, 'Big Grin', null)
 
 
 
@@ -272,9 +287,16 @@ const GnomeSunsetPa = new ImageObj(GnomeSunset, null, 'Gnome Over the Sound', 'D
 const GoblinChillPa = new ImageObj(GoblinChill, null, 'Goblin Afternoon', 'That was a good hill to chill on')
 const OutbackPa = new ImageObj(Outback, null, 'Outback', 'Subaru ha served me well')
 const ShadowMonkeyPa = new ImageObj(ShadowMonkey, null, 'Shadow Monkey at Dusk', 'Uncle Boonmee')
+const GreenSphinxPa = new ImageObj(GreenSphinx, null, 'Meadow Sphinx', 'Uncle Boonmee')
+const SquatchPa = new ImageObj(Squatch, null, 'Neighbor', 'Uncle Boonmee')
 
 
-
+// Pongo
+const PongoGif1 = new ImageObj(Pongo1, null, 'Pongo 1', 'Uncle Boonmee')
+const PongoGif2 = new ImageObj(Pongo2, null, 'Pongo 2', 'Uncle Boonmee')
+const PongoGif3 = new ImageObj(Pongo3, null, 'Pongo 3', 'Uncle Boonmee')
+const PongoGif4 = new ImageObj(Pongo4, null, 'Pongo 4', 'Uncle Boonmee')
+const PongoGif5 = new ImageObj(Pongo5, null, 'Pongo 5', 'Uncle Boonmee')
 
 
 
@@ -293,60 +315,38 @@ function ArtContent() {
 
   const mediums =[
     {
-      name: 'Drawing',
+      name: 'Curated',
       images: [
-        //OfficeDr,
-        BeastDr,
-        BogJojoDr,
-        BogPracDr,
-        BoogerDr,
-        BugDr,
-        CafeDr,
-        DonaldDr,
-        DrugsDr,
-        GoblinoDr,
-        GoblinosDr,
-        EyesightDr,
-        FishWarDr,
-        WebDr,
-        FunkGoblinDr,
-        HankPracDr,
-        IdkDr,
-        IncinDr,
-        KingEmailDr,
-        KKDr,
-        KnightDr,
-        //ScreensDr,
-        IslandsDr,
-        MessKidDr,
-        NakesDr,
-        NastyDr,
-        OldGutsDr,
-        PadGutsDr,
-        PunishedHankDr,
-        SmilesDr,
-        SmokeDr,
-        //SillyDr, 
-        SomethingDr,
-        //CodingDr,
-        GovDr,
-        TrailerDr,
-        TravelerDr,
-        WakeDr,
-        FragileDr,
-        DragonDr,
-        WildDr,
-        DizzynDr,
-        EdDr,
-        FunnyBotDr,
-        RobotsDr,
-        DeepWoodsDr,
-        NewShapeDr,
-        GoblinFollyDr,
-        GreenTotemDr,
-        QuatchDr,
-        ShumashDr,
-        YojimboDr
+        PongoGif1,
+        GoblinChillPa,
+        PongoGif5,
+        EldenShrekPs,
+        PongoGif2,
+        GreenSphinxPa,
+        GnomeSunsetPa,
+        BlueDemonPa,
+        TumboMdl,
+        ShumashMdl,
+        ElJefeMdl,
+        StrahdLadsPs,
+        HandsPs,
+        JebPs,
+        CowboyPs,
+        PongoPs
+      ]
+    },
+    {
+      name: 'Painting',
+      images: [
+        GreenSphinxPa,
+        SquatchPa,
+        GoblinChillPa,
+        GnomeSunsetPa,
+        ShadowMonkeyPa,
+        BlueDemonPa,
+        OutbackPa,
+        DavidMeltzerPa, 
+
       ]
     },
     {
@@ -368,14 +368,65 @@ function ArtContent() {
       ]
     },
     {
-      name: 'Painting',
+      name: 'Illustrations',
       images: [
-        ShadowMonkeyPa,
-        DavidMeltzerPa, 
-        BlueDemonPa,
-        GnomeSunsetPa
+        FragileDr,
+        DragonDr,
+        WildDr,
+        DizzynDr,
+        EdDr,
+        FunnyBotDr,
+        RobotsDr,
+        DeepWoodsDr,
+        NewShapeDr,
+        GoblinFollyDr,
+        GreenTotemDr,
+        QuatchDr,
+        ShumashDr,
+        // YojimboDr,
+        KingEmailDr,
+        //OfficeDr,
+        BeastDr,
+        BogJojoDr,
+        // BogPracDr,
+        // BoogerDr,
+        BugDr,
+        // CafeDr,
+        // DonaldDr,
+        // DrugsDr,
+        GoblinoDr,
+        GoblinosDr,
+        EyesightDr,
+        FishWarDr,
+        // WebDr,
+        FunkGoblinDr,
+        HankPracDr,
+        IdkDr,
+        IncinDr,
+        KKDr,
+        // KnightDr,
+        //ScreensDr,
+        IslandsDr,
+        // MessKidDr,
+        NakesDr,
+        NastyDr,
+        OldGutsDr,
+        PadGutsDr,
+        // PunishedHankDr,
+        // SmilesDr,
+        // SmokeDr,
+        //SillyDr, 
+        SomethingDr,
+        //CodingDr,
+        // GovDr,
+        TrailerDr,
+        TravelerDr,
+        // WakeDr,
+
       ]
     },
+
+
     {
       name: 'Pottery',
       images: [
@@ -392,7 +443,8 @@ function ArtContent() {
       name: '3D',
       images: [
         LegsMdl,
-        CrabMdl
+        CrabMdl,
+        TreeMdl
       ]
     },
     {
@@ -410,7 +462,7 @@ function ArtContent() {
         MustangPs,
         CowboyPs,
         PongoPs,
-        ToshiroPs,
+        // ToshiroPs,
       ]
     },
   ];

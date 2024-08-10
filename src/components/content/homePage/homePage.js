@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 import ModelViewer from './models/ModelViewer';
 
 import '../../../style.css';
@@ -6,9 +6,20 @@ import '../../../style.css';
 import './homePage.css';
 import BoogieSwitch from "../../state/Nightmare/BoogieSwitch";
 import SoundComponent from "../../state/soundComponent";
-import Smellbound from "../../../images/homeImages/QuatchBound2.png"
+import Smellbound from "../../../images/homeImages/QuatchBound4.png"
+import Pongo2024 from "../../../images/homeImages/pongo2024_1.png"
+import Tumbo from "../../../images/homeImages/tumbo_1.png"
+import Pongo1 from "../../../images/homeImages/pongoGifs/pongoGif_01.gif"
+import Pongo2 from "../../../images/homeImages/pongoGifs/pongoGif_02.gif"
+import Pongo3 from "../../../images/homeImages/pongoGifs/pongoGif_03.gif"
+import Pongo4 from "../../../images/homeImages/pongoGifs/pongoGif_04.gif"
+import Pongo5 from "../../../images/homeImages/pongoGifs/pongoGif_05.gif"
+
+import HomeArt from "./HomeArt";
 import { Provider, useSelector, useDispatch } from 'react-redux'
 import { setFont } from "../../state/Quests/QuestSlice";
+
+const images = [Pongo1, Smellbound, Pongo2, Tumbo,  Pongo4, Pongo2024, Pongo5,   ];
 
 class HomePage extends Component{
   render() {
@@ -53,6 +64,20 @@ function HomeContent() {
     dispatch(setFont(randomFont));
   };
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    // Implement logic to go to the next image
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    // Implement logic to go to the previous image
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
 
   return (
     <div className="HomeContent">
@@ -61,26 +86,32 @@ function HomeContent() {
       
       <div className="HomeContentGrid">
         <div className="Left">
-        <div className="HomeGridItem">
-            - Purpose -
-            <br/>
-            Smellbound serves as a digital gallery for hand-crafted smell based art pieces. 
-            <br/>
-            Avant-garde stench class media.
-            <br/>
-            The kinda stuff you'd find in a pile of mud.
 
-            {/* where am it
-            property of James McHugh
-            good internet
-            welcome to the gallery of smellbound. Collection of hand-crafted smell based artforms. avant garde stench
-            french delerium
-            parts of smellbound came out of a test tube */}
-            
-
-          </div>  
           <div className="HomeGridItem">
-            <img src={Smellbound} alt="Smellbound" className="Smellbound"/>
+            <HomeArt images={images}
+            currentIndex={currentImageIndex}
+            nextImage={nextImage}
+            prevImage={prevImage}/>
+            {/* <img src={Smellbound} alt="Smellbound" className="Smellbound"/> */}
+          </div>
+          <div className="HomeGridItem">
+            <div className="HomeLinks">
+              <h3>Links</h3>
+              <a href="https://x.com/slownibbler" target="_blank">Twitter</a> <br/>
+              <a href="https://x.com/slownibbler" target="_blank">Instagram</a> <br/>
+
+              {/* <text>Code: </text> */}
+              {/* <a href="https://github.com/SlowNibbler" target="_blank">Github</a> <br/> */}
+              {/* <text>Games: </text> */}
+              <a href="https://slownibbler.itch.io/" target="_blank">itch.io</a> <br/>
+              {/* <text>Mongwa: </text> */}
+              <a href="https://www.google.com/search?client=ms-android-samsung-gs-rev1&sxsrf=APwXEdfyf8zdiWAWC07xt29mHzkC-nsiTg:1683521655237&q=mongwa&tbm=isch&sa=X&ved=2ahUKEwjWnu3x9uT-AhWELn0KHQgiCnMQ0pQJegQIIRAB&biw=412&bih=722&dpr=2.63" target="_blank">????</a> <br/>
+              {/* <text>Movies: </text> */}
+              {/* <a href="https://letterboxd.com/TheWumboMan/" target="_blank">Letterboxd</a> <br/> */}
+              {/* <text>Twitter: </text> */}
+              {/* <text>Business: </text> */}
+              {/* <a href="https://www.linkedin.com/in/james-mchugh-a8297b163/" target="_blank">Linkedin</a>  */}
+            </div>
           </div>
           
           {/* <div className="HomeGridItem">
@@ -92,23 +123,12 @@ function HomeContent() {
           <div className="HomeGridItem" id="ModelViewerHolder">
             <ModelViewer/>
           </div>
-          <div className="HomeGridItem">
+          {/* <div className="HomeGridItem">
             <div className="HomeLinks">
-              <h3>Links</h3>
-              <text>Code: </text>
-              <a href="https://github.com/SlowNibbler" target="_blank">Github</a> <br/>
-              <text>Games: </text>
-              <a href="https://slownibbler.itch.io/" target="_blank">itch.io</a> <br/>
-              <text>Mongwa: </text>
-              <a href="https://www.google.com/search?client=ms-android-samsung-gs-rev1&sxsrf=APwXEdfyf8zdiWAWC07xt29mHzkC-nsiTg:1683521655237&q=mongwa&tbm=isch&sa=X&ved=2ahUKEwjWnu3x9uT-AhWELn0KHQgiCnMQ0pQJegQIIRAB&biw=412&bih=722&dpr=2.63" target="_blank">????</a> <br/>
-              {/* <text>Movies: </text> */}
-              {/* <a href="https://letterboxd.com/TheWumboMan/" target="_blank">Letterboxd</a> <br/> */}
-              {/* <text>Twitter: </text>
-              <a href="" target="_blank">Twitter</a>  */}
-              {/* <text>Business: </text> */}
-              {/* <a href="https://www.linkedin.com/in/james-mchugh-a8297b163/" target="_blank">Linkedin</a>  */}
+              <h3>Good Stuff</h3>
             </div>
-          </div>
+          </div> */}
+          
           <BoogieSwitch boo={boogieEnabled} />
 
           <SoundComponent />

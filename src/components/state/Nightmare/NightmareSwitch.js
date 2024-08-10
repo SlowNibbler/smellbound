@@ -8,7 +8,7 @@ const NightmareSwitch = () => {
   const nightmareEnabled = useSelector(selectNightmareEnabled);
 
   const handleToggle = () => {
-    const shouldConfirm = window.confirm("Are you sure? Really? Do you trust this website?");
+    const shouldConfirm = window.confirm("Nightmare Mode");
 
     if (shouldConfirm) {
       dispatch(toggleNightmare());

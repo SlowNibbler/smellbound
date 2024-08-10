@@ -2,7 +2,9 @@ import React, { useEffect, useState, Component } from "react"
 import './artPage.css'
 import { Provider, useSelector } from 'react-redux'
 import PictureShow from './PictureShow.js';
-
+import { Canvas, useThree  } from "@react-three/fiber"
+import { OrbitControls } from "@react-three/drei"
+import Model from "../homePage/models/Model";
 
 const DrawingContent = ({ activeMedium }) => {
   const images = Object.values(activeMedium.images); // Set your default model here
@@ -85,20 +87,18 @@ const DrawingContent = ({ activeMedium }) => {
             </li>
           ))}
         </ul> */}
-        <div>
-          <div className="ImageGallery">
-            {images.map((image, index) => (
-              <div key={index} className="image-container" onClick={() => openImageViewer(index)}>
-                <div className="image-info">
-                  <div>
-                    {image.name}<br/>
-                    {image.text}
-                  </div>
+        <div className="ImageGallery">
+          {images.map((image, index) => (
+            <div key={index} className="image-container" onClick={() => openImageViewer(index)}>
+              {/* <div className="image-info">
+                <div>
+                  {image.name}<br/>
+                  {image.text}
                 </div>
-                <Image image={image} index={index} nightmareEnabled={nightmareEnabled} />
-              </div>
-            ))}
-          </div>
+              </div> */}
+              <Image image={image} index={index} nightmareEnabled={nightmareEnabled} />
+            </div>
+          ))}
         </div>
         
         {viewerOpen && (
@@ -115,7 +115,11 @@ const DrawingContent = ({ activeMedium }) => {
   };
 
   const Image = ({image, index, nightmareEnabled}) => {
-    if (nightmareEnabled && image.nightmare != null) {
+    const hasScale = 'scale' in image;
+    if (hasScale) {
+      return CanvasWrapper(image, index, nightmareEnabled)
+    }
+    else if (nightmareEnabled && image.nightmare != null) {
       return (
         <a key={index} className="image-link" rel="noopener noreferrer">
           <img src={image.nightmare}_ key={index} className="Imagee" alt={`Image ${index}`} />
@@ -130,4 +134,46 @@ const DrawingContent = ({ activeMedium }) => {
     }
   } 
   
+
+  const CanvasWrapper = ({ activeModel, index, nightmareEnabled }) => {
+
+    if (nightmareEnabled && activeModel.nightmare != null) {
+      return (
+        <div className="ScultpoWrap" key={index}>
+          <div className="image-info">
+            {activeModel.name}<br/>
+            {activeModel.text}
+          </div>
+          <Canvas className="ModelViewer" shadows camera={{ position: [2, 0, 4.5], fov: 50 }}>
+            <OrbitControls/>
+            <ambientLight />
+            <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
+            <group position={[0, 0, 0]} scale={[.5, .5, .5]}>
+              <Model activeModel={activeModel.nightmare}/>
+            </group>
+          </Canvas>
+        </div>
+      );
+    } else {
+      return (
+        <div className="ScultpoWrap" key={index}>
+          <div className="image-info">
+            {activeModel.name}<br/>
+            {activeModel.text}
+          </div>
+          <Canvas className="ModelViewer" shadows camera={{ position: [2, 0, 4.5], fov: 50 }}>
+            <OrbitControls/>
+            <ambientLight />
+            <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
+            <group position={[0, 0, 0]} scale={[.5, .5, .5]}>
+              <Model activeModel={activeModel.model}/>
+            </group>
+          </Canvas>
+        </div>
+      );
+    }
+
+    
+  }
+
   export default DrawingContent

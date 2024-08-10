@@ -97,6 +97,7 @@ div.Sidebar ul li span {
     position: absolute;
     z-index: 3;
     margin-top: 0px;
+    transform: translateX(-250px);
 }
 
 

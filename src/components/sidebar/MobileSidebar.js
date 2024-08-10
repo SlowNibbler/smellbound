@@ -44,7 +44,7 @@ class SidebarButton extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      on: false,
+      on: true,
       position: 0
     };
   }

@@ -11,7 +11,7 @@ const questSlice = createSlice({
     nightmareEnabled: false,
     caveEnabled: true,
     boogieEnabled: false,
-    selectedImage: defImg,
+    selectedImage: null,
     currentFont: 'monospace',
   },
   reducers: {

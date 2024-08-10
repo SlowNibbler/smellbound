@@ -147,3 +147,23 @@ div.Home {
     opacity: 60%;
 
 }
+
+.home-image-info-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.arrow:hover {
+    color: rgb(232, 76, 76);
+    cursor: pointer;
+}
+
+.left {
+    padding-left: 20px;
+}
+
+.right {
+    padding-right: 20px;
+}

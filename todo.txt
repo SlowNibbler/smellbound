@@ -1,13 +1,8 @@
-- general css file for styling all the pages at once
-    - all text should be controlled by the same color
 
 - mobile friendly
     - on load, sidebar shouldn't be open
-    - clean up sidebar and top banner
 
 - images load faster/smaller res thumbnails?
-
-X - sidebar icon flickering
 
 
 Home Page
@@ -36,7 +31,7 @@ Mystery Page
 
 
 General 
-- add score, click on cylinder +1 point
+- add money, click on cylinder +100 dollars
 - more ancient sumerian vibes
 - happier color pallette
 - css links need to be consistent
